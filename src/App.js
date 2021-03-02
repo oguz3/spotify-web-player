@@ -1,9 +1,9 @@
 import './style/App.css';
 
-import Home from './pages/home'
-import Search from './pages/search'
-import Library from './pages/library'
-import NavButton from './component/sidebar/nav-button'
+import Home from './pages/home';
+import Search from './pages/search';
+import Library from './pages/library';
+import Sidebar from './component/sidebar/sidebar';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Home />
       <Search />
       <Library>Library Page</Library>
-      <NavButton IconName="Home">Ana Sayfa</NavButton>
+      <Sidebar/>
     </div>
   );
 }

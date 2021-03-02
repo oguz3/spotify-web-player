@@ -1,0 +1,22 @@
+.button{
+    border: 0;
+    background-color: var(--sidenav-black);
+    display: flex;
+    align-items: center;
+    width: 216px;
+    height: 40px;
+    padding: 0px 16px;
+    border-radius: 4px;
+}
+.button svg{
+    color: var(--text-gray);
+}
+.button p{
+    color: var(--text-gray);
+    margin: 0;
+    margin-left: 16px;
+}
+.button:hover svg,
+.button:hover p{
+    color: var(--text-white);
+}
