@@ -1,3 +1,8 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import './style/App.css';
 
 import Home from './pages/home';
@@ -7,12 +12,22 @@ import Sidebar from './component/sidebar/sidebar';
 
 function App() {
   return (
-    <div>
-      <Home />
-      <Search />
-      <Library>Library Page</Library>
-      <Sidebar/>
-    </div>
+        <Router>
+        <div>
+          <Sidebar/>
+          <Switch>
+            <Route exact path="/">
+                <Home />
+            </Route>
+            <Route path="/search">
+                <Search />
+            </Route>
+            <Route path="/library">
+                <Library>Library Page</Library>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
   );
 }
 
