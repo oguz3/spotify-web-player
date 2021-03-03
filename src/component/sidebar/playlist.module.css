@@ -1,0 +1,17 @@
+.Playlist{
+    margin-top: 24px;
+    padding: 0 var(--sidenav-margin-right) 12px var(--sidenav-margin-left);
+}
+.Playlist h3{
+    color: var(--text-gray);
+}
+.Playlist p{
+    line-height: 20px;
+    color: var(--text-gray);
+}
+.hr{
+    background-color: var(--sidenav-active);
+    border: none;
+    height: 1px;
+    min-height: 1px;
+}

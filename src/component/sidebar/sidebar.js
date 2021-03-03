@@ -1,7 +1,7 @@
 import {Logo} from '../icons';
-import NavButton from './nav-button'
-import Playlist from './playlist'
-import styles from './sidebar.module.css'
+import NavButton from './nav-button';
+import Playlist from './playlist';
+import styles from './sidebar.module.css';
 
 function Sidebar() {
     return (
@@ -10,9 +10,9 @@ function Sidebar() {
             <Logo/>
         </div>
         <div className={styles.navBtns}>
-          <NavButton href="/" IconName="Home" active>Ana Sayfa</NavButton>
+          <NavButton href="/" IconName="Home" active>Ana sayfa</NavButton>
           <NavButton href="/search" IconName="Search">Ara</NavButton>
-          <NavButton href="/library" IconName="Library">Kütüphane</NavButton>
+          <NavButton href="/library" IconName="Library">Kitaplığın</NavButton>
         </div>
         <div>
           <Playlist />
