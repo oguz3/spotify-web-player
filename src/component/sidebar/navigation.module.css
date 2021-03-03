@@ -1,3 +1,6 @@
+.navBtns{
+    padding: 0 8px;
+}
 .button{
     border: 0;
     background-color: var(--sidenav-black);
