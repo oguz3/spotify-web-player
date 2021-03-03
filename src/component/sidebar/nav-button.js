@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {Home, HomeActive, Search, SearchActive, Library, LibraryActive} from '../icons';
 import TextBoldM from '../text/text-bold-m';
 import styles from './nav-button.module.css';
@@ -22,12 +22,12 @@ function NavButton({IconName, children, active, href}){
     }
 
     return (
-        <Link to={href}>
-            <button className={`${styles.button} ${active ? styles.active : ''}`}>
+        <NavLink to={href} exact activeClassName="activeLink">
+            <button className={styles.button}>
                 <Icons/>
                 <TextBoldM>{children}</TextBoldM>
             </button>
-        </Link>
+        </NavLink>
     );
 }
 

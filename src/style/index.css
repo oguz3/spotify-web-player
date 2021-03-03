@@ -21,3 +21,10 @@ button{
 svg{
   font-size: 24px;
 }
+nav .activeLink button{
+  background-color: var(--sidenav-active);
+}
+nav .activeLink button p,
+nav .activeLink button svg{
+  color: var(--text-white);
+}

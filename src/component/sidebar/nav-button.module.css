@@ -16,13 +16,6 @@
     margin: 0;
     margin-left: 16px;
 }
-.active {
-    background-color: var(--sidenav-active);
-}
-.active svg,
-.active p{
-    color: var(--text-white);
-}
 .button:hover svg,
 .button:hover p{
     color: var(--text-white);
