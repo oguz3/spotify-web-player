@@ -3,7 +3,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import './style/App.css';
+import styles from './style/App.module.css';
 
 import Home from './pages/home';
 import Search from './pages/search';
@@ -13,7 +13,7 @@ import Sidebar from './component/sidebar/sidebar';
 function App() {
   return (
         <Router>
-        <div>
+        <div className={styles.layout}>
           <Sidebar/>
           <Switch>
             <Route exact path="/">

@@ -1,0 +1,8 @@
+.SideNavbar{
+    width: var(--sidenav-width);
+    background-color: var(--sidenav-black);
+    padding-top: 24px;
+}
+.navBtns{
+    padding: 0 8px;
+}

@@ -23,7 +23,7 @@ function NavButton({IconName, children, active, href}){
 
     return (
         <Link to={href}>
-            <button className={styles.button}>
+            <button className={`${styles.button} ${active ? styles.active : ''}`}>
                 <Icons/>
                 <TextBoldM>{children}</TextBoldM>
             </button>

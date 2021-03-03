@@ -3,7 +3,7 @@
     background-color: var(--sidenav-black);
     display: flex;
     align-items: center;
-    width: 216px;
+    width: 100%;
     height: 40px;
     padding: 0px 16px;
     border-radius: 4px;
@@ -15,6 +15,13 @@
     color: var(--text-gray);
     margin: 0;
     margin-left: 16px;
+}
+.active {
+    background-color: var(--sidenav-active);
+}
+.active svg,
+.active p{
+    color: var(--text-white);
 }
 .button:hover svg,
 .button:hover p{

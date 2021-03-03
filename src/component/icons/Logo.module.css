@@ -1,0 +1,12 @@
+.link{
+    display: block;
+    color: var(--text-white);
+    border: 0;
+    margin-bottom: 18px;
+    padding: 0 24px;
+}
+.logo{
+    width: 100%;
+    max-width: 131px;
+    height: 40px;
+}
