@@ -13,7 +13,7 @@ function Navigation() {
         const selected = router.pathname === menu.path
 
         return (
-            <NavLink to={menu.path} exact activeClassName="activeLink">
+            <NavLink to={menu.path} exact activeClassName="activeLink" key={menu.title}>
                 <button className={styles.button}>
                     {selected ? menu.iconSelected : menu.icon}
                     <TextBoldM>{menu.title}</TextBoldM>

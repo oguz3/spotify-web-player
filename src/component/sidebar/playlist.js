@@ -18,6 +18,7 @@ function Playlist() {
                 <PlaylistButton 
                   href={playlist.path} 
                   ImgName={playlist.ImgName}
+                  key={playlist.title}
                 >
                   {playlist.title}
                 </PlaylistButton>
@@ -30,7 +31,7 @@ function Playlist() {
         <div>
           {PLAYLISTLINKS.map((list) => {
             return (
-              <NavLink to={list.path}>
+              <NavLink to={list.path} key={list.title} exact activeClassName="a">
                   <TextRegularM>{list.title}</TextRegularM>
               </NavLink>
             );

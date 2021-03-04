@@ -30,12 +30,12 @@ export const MENU = [
 export const PLAYLIST = [
     {
       title: 'Çalma Listesi Oluştur',
-      path: 'any',
+      path: '/',
       ImgName: 'createPlaylist',
     },
     {
       title: 'Beğenilen Şarkılar',
-      path: 'any',
+      path: '/',
       ImgName: 'popularSong',
     }
 ]
