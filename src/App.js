@@ -5,16 +5,17 @@ import {
 } from "react-router-dom";
 import styles from './style/App.module.css';
 
+import Sidebar from './component/sidebar/sidebar';
+import Footer from './component/footer/footer';
 import Home from './pages/home';
 import Search from './pages/search';
 import Library from './pages/library';
-import Sidebar from './component/sidebar/sidebar';
 
 function App() {
   return (
         <Router>
         <div className={styles.layout}>
-          <Sidebar/>
+          <Sidebar />
           <Switch>
             <Route exact path="/">
                 <Home />
@@ -26,6 +27,7 @@ function App() {
                 <Library>Library Page</Library>
             </Route>
           </Switch>
+          <Footer />
         </div>
       </Router>
   );

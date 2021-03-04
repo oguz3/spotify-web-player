@@ -1,0 +1,16 @@
+.footer{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+}
+.nowplayingbar{
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    background-color: var(--card-background);
+    border-top: 1px solid var(--sidenav-active);
+    padding: 17px 16px;
+    color: #fff;
+}

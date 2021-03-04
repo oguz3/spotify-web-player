@@ -1,0 +1,12 @@
+.footerRight {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.soundBar{
+    display: flex;
+    align-items: center;
+}
+.soundBar input{
+    width: 93px;
+}

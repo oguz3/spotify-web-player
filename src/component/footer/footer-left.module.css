@@ -1,0 +1,37 @@
+.footerLeft{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.imgBox{
+    width: 56px;
+    height: 56px;
+}
+.imgBox img{
+    width: 100%;
+    height: 100%;
+}
+.songDetails{
+    margin-left: 16px;
+    margin-right: 16px;
+}
+.songDetails p{
+    margin: 0px;
+}
+.songDetails p small{
+    color: rgb(179, 179, 179);
+    font-size: 11px;
+}
+.likeBox,
+.pipBox{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.likeBox svg,
+.pipBox svg{
+    font-size: 16px;
+    fill: hsla(0,0%,100%,.7);
+}
