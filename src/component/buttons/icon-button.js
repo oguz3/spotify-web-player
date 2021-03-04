@@ -10,18 +10,17 @@ class IconButton extends React.Component {
         isActive: false,
       }
     } 
-  
+
     render() {
       return (
         <button 
             className={`${styles.iconButton} ${this.state.isActive ? "activeIcon" : ""}`} 
             onClick={()=>this.setState({ isActive: !this.state.isActive })}
         >
-            {this.state.isActive ?  this.props.activeicon :  this.props.icon}
+            {this.state.isActive ?  this.props.activeicon :  this.props.icon }
         </button>
       );
     }
   
 }
-
 export default IconButton

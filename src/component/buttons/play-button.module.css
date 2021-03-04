@@ -1,0 +1,16 @@
+.playBtn{
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    color: #000;
+    border: none;
+    background-color: #fff;
+    padding: 0;
+    transition: .2s;
+}
+.playBtn:hover{
+    transform: scale(1.1);
+}
+.playBtn svg{
+    fill: #000 !important;
+}

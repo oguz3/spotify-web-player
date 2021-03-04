@@ -4,21 +4,33 @@ import IconButton from '../buttons/icon-button';
 
 import styles from "./footer-right.module.css";
 
-function FooterRight(){
+function FooterRight({ volume, setVolume }){
     return (
         <div className={styles.footerRight}>
             <IconButton icon={<Icons.Mix />} activeicon={<Icons.Mix />}/>
             <IconButton icon={<Icons.DownloadApp />} activeicon={<Icons.DownloadApp />}/>
-            <SoundLevel />
+            <SoundLevel volume={volume} setVolume={setVolume} />
         </div>
     );
 }
 
-function SoundLevel(){
+function SoundLevel({ volume, setVolume }){
+
+
+    const handleInputChange = () => {
+        if(volume == 0){
+            setVolume(parseFloat(1));
+        }else{
+            setVolume(parseFloat(0));
+        }
+    };
+
     return (
         <div className={styles.soundBar}>
-            <IconButton icon={<Icons.Sound />} activeicon={<Icons.SoundClose />}/>
-            <RangeSlider value="90" minvalue="0" maxvalue="100"/>
+            <div tabIndex="0" role="button" onClick={handleInputChange}>
+                <IconButton icon={<Icons.Sound />} activeicon={<Icons.SoundClose />}/>
+            </div>
+            <RangeSlider minvalue={0} maxvalue={1} value={volume} handleChange={setVolume}/>
         </div>
     );
 }

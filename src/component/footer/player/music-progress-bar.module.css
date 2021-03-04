@@ -1,0 +1,21 @@
+.musicProgress{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.musicProgress span p{
+    margin: 0px 8px;
+    word-break: normal;
+    font-size: 11px;
+    color: rgb(179, 179, 179);
+}
+.musicProgress div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.musicProgress input {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
