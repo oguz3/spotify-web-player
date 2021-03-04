@@ -22,16 +22,3 @@
     color: rgb(179, 179, 179);
     font-size: 11px;
 }
-.likeBox,
-.pipBox{
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.likeBox svg,
-.pipBox svg{
-    font-size: 16px;
-    fill: hsla(0,0%,100%,.7);
-}

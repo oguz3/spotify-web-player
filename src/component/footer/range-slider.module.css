@@ -20,7 +20,7 @@
 	z-index: 9;
 	background: #b3b3b3;
 	border-radius: 50%;
-	box-shadow: -210px 0 0 208px #b3b3b3;
+	box-shadow: -410px 0 0 408px #b3b3b3;
 	cursor: pointer;
 	height: 4px;
 	width: 4px;
@@ -29,7 +29,7 @@
 .range__slider::-moz-range-thumb {
 	background: #b3b3b3;
 	border-radius: 50%;
-	box-shadow: -210px 0 0 208px #b3b3b3;
+	box-shadow: -410px 0 0 408px #b3b3b3;
 	cursor: pointer;
 	height: 4px;
 	width: 4px;
@@ -50,9 +50,9 @@
 }
 .progressBar:hover .range__slider::-webkit-slider-thumb {
 	background: #1db954;
-	box-shadow: -210px 0 0 208px #1db954;
+	box-shadow: -410px 0 0 408px #1db954;
 }
 .progressBar:hover .range__slider::-moz-range-thumb {
 	background: #1db954;
-	box-shadow: -210px 0 0 208px #1db954;
+	box-shadow: -410px 0 0 408px #1db954;
 }

@@ -37,3 +37,7 @@ p{
   text-overflow: ellipsis;
   overflow: hidden;
 }
+.activeIcon svg{
+  fill: #1db954 !important;
+  color: #1db954 !important;
+}

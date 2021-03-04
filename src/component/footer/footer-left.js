@@ -1,5 +1,6 @@
 import * as Icons from '../icons';
 import TextRegularM from '../text/text-regular-m';
+import IconButton from '../icons/icon-button';
 
 import styles from "./footer-left.module.css";
 
@@ -8,8 +9,8 @@ function FooterLeft(){
         <div className={styles.footerLeft}>
             <ImgBox />
             <SongDetails />
-            <Like />
-            <PipToogle />
+            <IconButton icon={<Icons.Like />} activeicon={<Icons.LikeActive />}/>
+            <IconButton icon={<Icons.Corner />} activeicon={<Icons.Corner />}/>
         </div>
     );
 }
@@ -27,22 +28,6 @@ function SongDetails(){
         <div className={styles.songDetails}>
             <TextRegularM>Yaşıyorum Sil Baştan</TextRegularM>
             <TextRegularM><small>Ari Barakos</small></TextRegularM>
-        </div>
-    );
-}
-
-function Like(){
-    return (
-        <div className={styles.likeBox}>
-            <Icons.Like />
-        </div>
-    );
-}
-
-function PipToogle(){
-    return (
-        <div className={styles.pipBox}>
-            <Icons.Corner />
         </div>
     );
 }

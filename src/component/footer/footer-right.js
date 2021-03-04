@@ -1,30 +1,15 @@
 import * as Icons from '../icons';
 import RangeSlider from './range-slider';
+import IconButton from '../icons/icon-button';
 
 import styles from "./footer-right.module.css";
 
 function FooterRight(){
     return (
         <div className={styles.footerRight}>
-            <AddList />
-            <Connect />
+            <IconButton icon={<Icons.Mix />} activeicon={<Icons.Mix />}/>
+            <IconButton icon={<Icons.DownloadApp />} activeicon={<Icons.DownloadApp />}/>
             <SoundLevel />
-        </div>
-    );
-}
-
-function AddList(){
-    return (
-        <div className={styles.addList}>
-            <Icons.Mix />
-        </div>
-    );
-}
-
-function Connect(){
-    return (
-        <div className={styles.connect}>
-            <Icons.DownloadApp />
         </div>
     );
 }
@@ -32,10 +17,11 @@ function Connect(){
 function SoundLevel(){
     return (
         <div className={styles.soundBar}>
-            <Icons.Sound />
+            <IconButton icon={<Icons.Sound />} activeicon={<Icons.SoundClose />}/>
             <RangeSlider value="90"/>
         </div>
     );
 }
+
 
 export default FooterRight;

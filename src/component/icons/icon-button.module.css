@@ -1,0 +1,19 @@
+.iconButton{
+    border: 0;
+    background: transparent;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iconButton svg{
+    font-size: 16px;
+    fill: hsla(0,0%,100%,.7);
+    color: hsla(0,0%,100%,.7);
+}
+.iconButton:hover svg{
+    fill: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
