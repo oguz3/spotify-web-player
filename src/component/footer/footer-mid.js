@@ -1,6 +1,6 @@
 import * as Icons from '../icons';
 import RangeSlider from './range-slider';
-import IconButton from '../icons/icon-button';
+import IconButton from '../buttons/icon-button';
 import TextRegularM from '../text/text-regular-m';
 
 import styles from "./footer-mid.module.css";
@@ -32,7 +32,7 @@ function MusicProgress(){
     return (
         <div className={styles.musicProgress}>
             <span><TextRegularM>0:01</TextRegularM></span>
-            <RangeSlider value="1"/>
+            <RangeSlider value="1" minvalue="0" maxvalue="228"/>
             <span><TextRegularM>3:48</TextRegularM></span>
         </div>
     );

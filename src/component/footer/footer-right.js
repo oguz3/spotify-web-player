@@ -1,6 +1,6 @@
 import * as Icons from '../icons';
 import RangeSlider from './range-slider';
-import IconButton from '../icons/icon-button';
+import IconButton from '../buttons/icon-button';
 
 import styles from "./footer-right.module.css";
 
@@ -18,7 +18,7 @@ function SoundLevel(){
     return (
         <div className={styles.soundBar}>
             <IconButton icon={<Icons.Sound />} activeicon={<Icons.SoundClose />}/>
-            <RangeSlider value="90"/>
+            <RangeSlider value="90" minvalue="0" maxvalue="100"/>
         </div>
     );
 }
