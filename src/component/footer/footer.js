@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import track from '../../tracks/gavurlar.mp3';
+import track from '../../tracks/Gavurlar.mp3';
 
 import FooterLeft from './footer-left';
 import MusicControlBox from './player/music-control-box';
@@ -9,10 +9,9 @@ import Audio from './audio';
 
 import styles from "./footer.module.css";
 
-function Footer(){
+function Footer({isPlaying, setIsPlaying}){
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolume] = useState(1);
     const audioRef = useRef(null);
 

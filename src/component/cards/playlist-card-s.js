@@ -4,7 +4,7 @@ import * as Icons from '../icons';
 
 import styles from "./playlist-card-s.module.css";
 
-function PlaylistCardS({path, imgUrl, title, hoverColor}){
+function PlaylistCardS({path, imgUrl, title, hoverColor, isPlaying, setIsPlaying}){
 
     function changeTheme(){
         document.documentElement.style.setProperty('--hover-home-bg', hoverColor);
@@ -19,7 +19,7 @@ function PlaylistCardS({path, imgUrl, title, hoverColor}){
                 <div className={styles.Title}>
                     <TextBoldL>{title}</TextBoldL>
                     <div className={styles.IconBox}>
-                        <button>
+                        <button onClick={() => setIsPlaying(!isPlaying)}>
                             <Icons.Play />
                         </button>
                     </div>

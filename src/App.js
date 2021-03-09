@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,13 +13,15 @@ import Search from './pages/search';
 import Library from './pages/library';
 
 function App() {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
         <Router>
         <div className={styles.layout}>
           <Sidebar />
           <Switch>
             <Route exact path="/">
-                <Home />
+                <Home  isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
             </Route>
             <Route path="/search">
                 <Search />
@@ -27,7 +30,7 @@ function App() {
                 <Library>Library Page</Library>
             </Route>
           </Switch>
-          <Footer />
+          <Footer isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
         </div>
       </Router>
   );
