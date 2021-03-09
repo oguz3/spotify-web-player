@@ -1,3 +1,27 @@
 .Home{
-    padding: 20px;
+    background: transparent;
+    position: relative;
 }
+.HoverBg{
+    height: 332px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.6)),to(#121212));
+    background-image: linear-gradient(rgba(0,0,0,.6),#121212);
+    -webkit-transition: background 1s ease;
+    transition: background 1s ease;
+
+    background-color: rgb(83, 83, 83);
+}
+.Bg{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+    bottom: 95px;
+    background: #121212;
+    z-index: -2;
+}
+

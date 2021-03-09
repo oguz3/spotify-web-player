@@ -10,7 +10,7 @@ function SvgNextpage(props) {
       className="nextpage_svg__Svg-sc-1usfroi-0 nextpage_svg__jUuLJy nextpage_svg___6fe5d5efc9b4a07d5c424071ac7cdacb-scss"
       {...props}
     >
-      <path fill="none" stroke="#181818" d="M8 4l9 8-9 8" />
+      <path fill="none" stroke="currentColor" d="M8 4l9 8-9 8" />
     </svg>
   );
 }

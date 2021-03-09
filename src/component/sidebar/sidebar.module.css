@@ -3,3 +3,9 @@
     background-color: var(--sidenav-black);
     padding-top: 24px;
 }
+.Fixed{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding-top: 24px;
+}
