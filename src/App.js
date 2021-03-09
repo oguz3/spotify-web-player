@@ -27,7 +27,7 @@ function App() {
                 <Search />
             </Route>
             <Route path="/library">
-                <Library>Library Page</Library>
+                <Library />
             </Route>
           </Switch>
           <Footer isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
