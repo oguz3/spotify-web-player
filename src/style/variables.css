@@ -8,4 +8,6 @@
     --sidenav-width: 238px;
     --sidenav-margin-left: 24px;
     --sidenav-margin-right: 24px;
+    --minimum-column-width: 270px;
+    --hover-home-bg: rgb(83, 83, 83);
 }

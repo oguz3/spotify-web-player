@@ -7,9 +7,11 @@ import TextBoldL from '../component/text/text-bold-l'
 import TextBoldM from '../component/text/text-bold-m'
 import TextRegularM from '../component/text/text-regular-m'
 
+import styles from "./search.module.css";
+
 function Search(){
     return (
-        <div>
+        <div className={styles.SearchPage}>
             <Topnav />
             <TitleL>Title Large Component</TitleL>
             <TitleM>Title Medium Component</TitleM>

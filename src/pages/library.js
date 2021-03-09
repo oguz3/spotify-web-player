@@ -1,8 +1,10 @@
 import Topnav from '../component/topnav/topnav';
 
+import styles from "./library.module.css";
+
 function Library({children}){
     return (
-        <div>
+        <div className={styles.LibPage}>
             <Topnav />
             {children}
         </div>

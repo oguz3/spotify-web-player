@@ -13,7 +13,7 @@
     -webkit-transition: background 1s ease;
     transition: background 1s ease;
 
-    background-color: rgb(83, 83, 83);
+    background-color: var(--hover-home-bg);
 }
 .Bg{
     position: absolute;
@@ -23,4 +23,26 @@
     bottom: 95px;
     background: #121212;
     z-index: -2;
+}
+.Content{
+    padding: 0 32px;
+    padding-top: 24px;
+}
+.Content section:not(:first-child) {
+    margin-top: 32px;
+}
+.SectionTitle {
+    margin-bottom: 22px;
+}
+.SectionTitle h1{
+    margin: 0;
+    color: #fff;
+}
+.SectionCards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(var(--minimum-column-width),1fr));
+    row-gap: 16px;
+    column-gap: 24px;
+    max-height: 176px;
+    overflow-y: hidden;
 }
