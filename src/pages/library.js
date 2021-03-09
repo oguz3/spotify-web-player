@@ -1,6 +1,11 @@
+import Topnav from '../component/topnav/topnav';
+
 function Library({children}){
     return (
-        <div>{children}</div>
+        <div>
+            <Topnav />
+            {children}
+        </div>
     );
 }
 

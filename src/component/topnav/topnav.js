@@ -1,4 +1,5 @@
-import * as Icons from '../icons';
+import PrevPageBtn from '../buttons/prev-page-button';
+import NextPageBtn from '../buttons/next-page-button';
 
 import styles from './topnav.module.css';
 
@@ -7,12 +8,8 @@ function Topnav() {
       <nav className={styles.Topnav}>
           <div>
                 <span>
-                    <button className={styles.PrevBtn}>
-                        <Icons.Prevpage />
-                    </button>
-                    <button className={styles.NextBtn}>
-                        <Icons.Nextpage />
-                    </button>
+                    <PrevPageBtn />
+                    <NextPageBtn />
                 </span>
                 <span>
                     <button className={styles.ProfileBtn}>

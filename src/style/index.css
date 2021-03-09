@@ -41,3 +41,23 @@ p{
   fill: #1db954 !important;
   color: #1db954 !important;
 }
+.PrevBtn,
+.NextBtn{
+    border: none;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.7);
+    color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 16px;
+}
+.PrevBtn svg,
+.NextBtn svg{
+    font-size: 22px;
+}

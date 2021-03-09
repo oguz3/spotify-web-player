@@ -1,3 +1,4 @@
+import Topnav from '../component/topnav/topnav';
 import TitleL from '../component/text/title-l'
 import TitleM from '../component/text/title-m'
 import TitleS from '../component/text/title-s'
@@ -9,6 +10,7 @@ import TextRegularM from '../component/text/text-regular-m'
 function Search(){
     return (
         <div>
+            <Topnav />
             <TitleL>Title Large Component</TitleL>
             <TitleM>Title Medium Component</TitleM>
             <TitleS>Title Small Component</TitleS>
