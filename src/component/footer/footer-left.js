@@ -18,7 +18,7 @@ function FooterLeft(){
 function ImgBox(){
     return (
         <div className={styles.imgBox}>
-            <img src={'https://i.scdn.co/image/ab67616d000048511d26b3e7ea803059a6e4ffea'} alt="Yaşıyorum Sil Baştan"/>
+            <img src={'https://i.scdn.co/image/ab67616d000048511d26b3e7ea803059a6e4ffea'} alt="Gavurlar"/>
         </div>
     );
 }
@@ -26,7 +26,7 @@ function ImgBox(){
 function SongDetails(){
     return (
         <div className={styles.songDetails}>
-            <TextRegularM>Yaşıyorum Sil Baştan</TextRegularM>
+            <TextRegularM>Gavurlar</TextRegularM>
             <TextRegularM><small>Ari Barakos</small></TextRegularM>
         </div>
     );

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import track from '../../tracks/gossip.mp3';
+import track from '../../tracks/gavurlar.mp3';
 
 import FooterLeft from './footer-left';
 import MusicControlBox from './player/music-control-box';
