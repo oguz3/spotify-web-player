@@ -1,8 +1,6 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
-import { MUSICLINKS } from '../../data/index';
-
 const Audio = forwardRef(({ track, handleDuration, handleCurrentTime }, ref) => {
     return (
       <audio

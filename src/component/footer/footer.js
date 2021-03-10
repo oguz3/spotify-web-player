@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from 'react';
-import track from '../../tracks/Gavurlar.mp3';
 
 import FooterLeft from './footer-left';
 import MusicControlBox from './player/music-control-box';
@@ -9,7 +8,7 @@ import Audio from './audio';
 
 import styles from "./footer.module.css";
 
-function Footer({isPlaying, setIsPlaying, track, totalMusic}){
+function Footer({isPlaying, setIsPlaying, track, trackName, totalMusic}){
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(1);
@@ -35,17 +34,16 @@ function Footer({isPlaying, setIsPlaying, track, totalMusic}){
     return (
         <footer className={styles.footer}>
             <div className={styles.nowplayingbar}>
-                <FooterLeft />
+                <FooterLeft trackName={trackName}/>
                 <div className={styles.footerMid}>
-                    <MusicControlBox isPlaying={isPlaying} setIsPlaying={setIsPlaying} musicIndex={index} setIndex={setIndex} totalMusic={totalMusic}/>
+                    <MusicControlBox isPlaying={isPlaying} setIsPlaying={setIsPlaying} /*musicIndex={index} setIndex={setIndex} totalMusic={totalMusic}*//>
                     <MusicProgressBar currentTime={currentTime} duration={duration} handleTrackClick={handleTrackClick}/>
                     <Audio
-                        track={track[index].link}
+                        track={track}
                         ref={audioRef}
                         handleDuration={setDuration}
                         handleCurrentTime={setCurrentTime}
                     />
-                    {index}
                 </div>
                 <FooterRight volume={volume} setVolume={setVolume}/>
             </div>

@@ -12,11 +12,13 @@ import Search from './pages/search';
 import Library from './pages/library';
 import PlaylistPage from './pages/playlist';
 
-import { MUSICLINKS } from './data/index';
+//import { MUSICLINKS } from './data/index';
 import styles from './style/App.module.css';
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [trackName, setTrackName] = useState('Yaşıyorum Sil Baştan');
+  const [track, setTrack] = useState('https://server1.indiryuklemp3.org/mp3_files/yasiyorum-sil-bastan-h8OmycopAr-0.mp3');
 
   return (
         <Router>
@@ -24,7 +26,7 @@ function App() {
           <Sidebar />
           <Switch>
             <Route exact path="/">
-                <Home  isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+                <Home isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
             </Route>
             <Route path="/search">
                 <Search />
@@ -32,9 +34,20 @@ function App() {
             <Route path="/library">
                 <Library />
             </Route>
-            <Route exact path="/playlist/:path" component={PlaylistPage} />
+            <Route exact path="/playlist/:path">
+                <PlaylistPage 
+                  isPlaying={isPlaying} 
+                  setIsPlaying={setIsPlaying} 
+                  setTrack={setTrack}
+                  setTrackName={setTrackName}
+                />
+            </Route>
           </Switch>
-          <Footer isPlaying={isPlaying} setIsPlaying={setIsPlaying} track={MUSICLINKS} totalMusic={MUSICLINKS.length}/>
+          <Footer 
+            isPlaying={isPlaying} 
+            setIsPlaying={setIsPlaying} 
+            trackName={trackName}
+            track={track}/* totalMusic={MUSICLINKS.length}*//>
         </div>
       </Router>
   );

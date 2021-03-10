@@ -6,7 +6,7 @@ function PlaylistButton({ImgName, children, href}){
     return (
         <NavLink to={href}>
             <button className={styles.button}>
-                <img src={`./image/${ImgName}.PNG`} alt={ImgName} />
+                <img src={`http://localhost:3000/image/${ImgName}.PNG`} alt={ImgName} />
                 <TextBoldM>{children}</TextBoldM>
             </button>
         </NavLink>

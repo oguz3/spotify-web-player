@@ -4,11 +4,11 @@ import IconButton from '../buttons/icon-button';
 
 import styles from "./footer-left.module.css";
 
-function FooterLeft(){
+function FooterLeft({trackName}){
     return (
         <div className={styles.footerLeft}>
             <ImgBox />
-            <SongDetails />
+            <SongDetails trackName={trackName}/>
             <IconButton icon={<Icons.Like />} activeicon={<Icons.LikeActive />}/>
             <IconButton icon={<Icons.Corner />} activeicon={<Icons.Corner />}/>
         </div>
@@ -23,10 +23,10 @@ function ImgBox(){
     );
 }
 
-function SongDetails(){
+function SongDetails({trackName}){
     return (
         <div className={styles.songDetails}>
-            <TextRegularM>Gavurlar</TextRegularM>
+            <TextRegularM>{trackName}</TextRegularM>
             <TextRegularM><small>Ari Barakos</small></TextRegularM>
         </div>
     );

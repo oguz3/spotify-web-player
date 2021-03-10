@@ -1,5 +1,6 @@
 export const PLAYLIST = [
     {
+      type: 'albüm',
       title: 'Lafıma Gücenme',
       link: 'lafimagucenme',
       imgUrl: 'https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea',
@@ -9,23 +10,28 @@ export const PLAYLIST = [
       playlistData: [
                         {
                           index: "1",
-                          songName: "Yaşıyorum Sil Baştan"
+                          songName: "Yaşıyorum Sil Baştan",
+                          link: "https://server1.indiryuklemp3.org/mp3_files/yasiyorum-sil-bastan-h8OmycopAr-0.mp3"
                         },
                         {
                           index: "2",
-                          songName: "Salaksın"
+                          songName: "Salaksın",
+                          link: "https://server1.indiryuklemp3.org/mp3_files/salaksin-I6hfUKt21R-0.mp3"
                         },
                         {
                           index: "3",
-                          songName: "Yanlızlık Kanında Var"
+                          songName: "Yanlızlık Kanında Var",
+                          link: "https://server1.indiryuklemp3.org/mp3_files/yalnizlik-kaninda-var-0vWfgutCZj-0.mp3"
                         },
                         {
                           index: "4",
-                          songName: "Gavurlar"
+                          songName: "Gavurlar",
+                          link: "https://server1.indiryuklemp3.org/mp3_files/gavurlar-hzfjF7ZWLE-0.mp3"
                         }
       ]
     },
     {
+      type: 'playlist',
       title: 'Heavy Queens',
       link: 'heavyqueens',
       imgUrl: 'https://i.scdn.co/image/ab67706f000000021e117034167831d5574aba62',
@@ -48,6 +54,7 @@ export const PLAYLIST = [
         ]
     },
     {
+      type: 'playlist',
       title: 'Türkçe Rock',
       link: 'turkcerock',
       imgUrl: 'https://i.scdn.co/image/ab67706f00000002ce3ed77553569a17b34b2b12',
@@ -70,6 +77,7 @@ export const PLAYLIST = [
       ]
     },
     {
+      type: 'playlist',
       title: 'Daily Mix 1',
       link: 'dailymix1',
       imgUrl: 'https://dailymix-images.scdn.co/v2/img/ab67616d0000b2731cfa3aa970ec68a11a015c7c/1/tr/default',
@@ -92,6 +100,7 @@ export const PLAYLIST = [
       ]
     },
     {
+      type: 'playlist',
       title: 'Çalmaya Doyamadıkların',
       link: 'calmayadoyamadiklarin',
       imgUrl: 'https://daily-mix.scdn.co/covers/backtracks/PZN_Repeat_Rewind_DEFAULT-tr.jpg',
@@ -114,6 +123,7 @@ export const PLAYLIST = [
       ]
     },
     {
+      type: 'albüm',
       title: 'Ben',
       link: 'ben',
       imgUrl: 'https://i.scdn.co/image/ab67616d0000b273e0cfce61b45ba6064a07fb0e',
@@ -136,6 +146,7 @@ export const PLAYLIST = [
       ]
     },
     {
+      type: 'playlist',
       title: 'Daily Mix 2',
       link: 'dailymix2',
       imgUrl: 'https://dailymix-images.scdn.co/v2/img/04cd9bccf59e8061f13e779d1001975a60fb837a/2/tr/default',
@@ -158,6 +169,7 @@ export const PLAYLIST = [
       ]
     },
     {
+      type: 'playlist',
       title: 'Daily Mix 3',
       link: 'dailymix3',
       imgUrl: 'https://dailymix-images.scdn.co/v2/img/c23701238e46876969ea3b694e9b42b8db133b91/3/tr/default',
@@ -180,6 +192,7 @@ export const PLAYLIST = [
       ]
     },
     {
+      type: 'playlist',
       title: 'O Tarz Mi?',
       link: 'otarzmi',
       imgUrl: 'https://i.scdn.co/image/dacd32a7203aeb7b7910d8880943a939c8006b0a',
@@ -201,7 +214,8 @@ export const PLAYLIST = [
         },
       ]
     },
-        {
+    {
+      type: 'playlist',
       title: 'Haftalık Keşif',
       link: 'haftalikkesif',
       imgUrl: 'https://newjams-images.scdn.co/v3/discover-weekly/2lV5Qwmpe91f0dhmWfev1weP_q_HziA_LM11FaIr4Bu68O0yYXq-XPsfv6Avul-vaOKC9f6srSRgph0fDqROxs2RF1snIhpYpjxK5JjdyiQ=/MTM6MDA6MTBUMzItMzAtMQ==/default',

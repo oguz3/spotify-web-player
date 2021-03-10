@@ -39,3 +39,145 @@
     z-index: -3;
     background-color: var(--main-background);
 }
+
+.playlistDetails{
+    padding: 24px 32px 24px;
+    display: grid;
+    grid-template-columns: 232px 1fr;
+    column-gap: 24px;
+}
+.imgBox{
+    width: 232px;
+    height: 232px;
+}
+.imgBox img{
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
+    box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
+}
+.textBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.textBox h3{
+    margin: 0;
+    margin-top: 4px;
+    letter-spacing: -0.4px;
+}
+.textBox h1{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+    padding: 0.08em 0px;
+    font-size: 96px;
+    line-height: 96px;
+    font-weight: 700;
+    letter-spacing: -.04em;
+    text-transform: none;
+}
+.Artist{
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+.Artist figure{
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    display: inline-block;
+}
+.Artist figure img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.Artist p{
+    margin: 0;
+    margin-left: 6px;
+}
+
+.PlaylistIcons{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 24px 32px;
+    position: relative;
+}
+.PlaylistIcons div{
+    margin-right: 32px;
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+    background-color: #1db954;
+}
+.PlaylistIcons div button{
+    width: 56px;
+    height: 56px;
+}
+.PlaylistIcons div button svg{
+    font-size: 28px;
+    fill: #fff !important;
+}
+.PlaylistIcons button svg{
+    font-size: 28px;
+}
+.moreIcon{
+    margin-left: 24px;
+    font-size: 28px;
+    color: hsla(0,0%,100%,.6);
+}
+
+.PlaylistSongs{
+    padding: 0 32px;
+}
+
+.SongBtn{
+    display: block;
+    width: 100%;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: white;
+    position: relative;
+    display: grid;
+    grid-template-columns: 16px 1fr 38px;
+    align-items: center;
+    text-align: left;
+    padding: 0px 16px;
+    column-gap: 16px;
+    height: 56px;
+
+}
+.SongBtn p{
+    margin: 0;
+    font-weight: 400;
+}
+.SongBtn span p:last-child,
+.SongBtn p:last-child{
+    color: rgb(179, 179, 179);
+}
+.SongBtn div[role="button"]{
+    position: absolute;
+    opacity: 0;
+    background: none;
+    left: 5px;
+    z-index: 2;
+}
+.SongBtn div[role="button"] svg{
+    fill: #fff !important;
+}
+.SongBtn:hover{
+    background-color: hsla(0,0%,100%,.1);
+}
+.SongBtn:hover .SongIndex{
+    opacity: 0;
+}
+.SongBtn:hover div[role="button"]{
+    opacity: 1;
+}
