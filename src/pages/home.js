@@ -6,7 +6,7 @@ import PlaylistCardM from '../component/cards/playlist-card-m';
 
 import styles from "./home.module.css";
 
-import { SECTIONONE, SECTIONTWO } from '../data/index'
+import { PLAYLIST } from '../data/index'
 
 function Home({isPlaying, setIsPlaying}){
     return (
@@ -22,7 +22,7 @@ function Home({isPlaying, setIsPlaying}){
                         <TitleL>İyi günler</TitleL>
                     </div>
                     <div className={styles.SectionCards}>
-                        {SECTIONONE.map((item) => {
+                        {PLAYLIST.map((item) => {
                             return (
                                 <PlaylistCardS 
                                     path={item.link}
@@ -43,7 +43,7 @@ function Home({isPlaying, setIsPlaying}){
                         <TitleM>Yakında çalınanlar</TitleM>
                     </div>
                     <div className={styles.SectionCardsMedium}>
-                        {SECTIONTWO.map((item) => {
+                        {PLAYLIST.slice(0, 6).map((item) => {
                             return (
                                 <PlaylistCardM 
                                     path={item.link}

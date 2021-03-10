@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import TextBoldL from '../text/text-bold-l';
 import * as Icons from '../icons';
 
@@ -11,7 +11,7 @@ function PlaylistCardS({path, imgUrl, title, hoverColor, isPlaying, setIsPlaying
     }
 
     return (
-        <NavLink to={path} onMouseOver={changeTheme}>
+        <Link to={`/playlist/${path}`} onMouseOver={changeTheme}>
             <div className={styles.PlaylistCardS}>
                 <div className={styles.ImgBox}>
                     <img src={imgUrl} alt={`${title}`} />
@@ -25,7 +25,7 @@ function PlaylistCardS({path, imgUrl, title, hoverColor, isPlaying, setIsPlaying
                     </div>
                 </div>
             </div>
-        </NavLink>
+        </Link>
     );
 }
 

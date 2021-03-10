@@ -11,6 +11,7 @@ import Footer from './component/footer/footer';
 import Home from './pages/home';
 import Search from './pages/search';
 import Library from './pages/library';
+import PlaylistPage from './pages/playlist';
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -29,6 +30,7 @@ function App() {
             <Route path="/library">
                 <Library />
             </Route>
+            <Route exact path="/playlist/:path" component={PlaylistPage} />
           </Switch>
           <Footer isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
         </div>

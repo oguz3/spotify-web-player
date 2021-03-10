@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import TextBoldL from "../text/text-bold-l";
 import TextRegularM from '../text/text-regular-m';
 import * as Icons from "../icons";
@@ -7,7 +7,7 @@ import styles from "./playlist-card-m.module.css";
 
 function PlaylistCardM({ path, imgUrl, title, artist, isPlaying, setIsPlaying}) {
 	return (
-		<NavLink to={path}>
+		<Link to={`/playlist/${path}`}>
 			<div className={styles.PlaylistCardS}>
 				<div className={styles.ImgBox}>
 					<img src={imgUrl} alt={title} />
@@ -22,7 +22,7 @@ function PlaylistCardM({ path, imgUrl, title, artist, isPlaying, setIsPlaying}) 
 					<TextRegularM>{artist}</TextRegularM>
 				</div>
 			</div>
-		</NavLink>
+		</Link>
 	);
 }
 

@@ -1,6 +1,8 @@
 .Home{
     background: transparent;
     position: relative;
+    margin-bottom: 95px;
+    padding-bottom: 16px;
 }
 .HoverBg{
     height: 332px;
@@ -20,7 +22,7 @@
     left: 0;
     right: 0;
     top: 60px;
-    bottom: 95px;
+    bottom: 0px;
     background: #121212;
     z-index: -2;
 }
@@ -55,81 +57,4 @@
     overflow-y: hidden;
     grid-auto-rows: 0;
     grid-template-rows: 1fr;
-}
-
-
-
-.PlaylistCardS{
-    position: relative;
-    padding: 16px;
-    background: #181818;
-    border-radius: 4px;
-    -webkit-transition: background-color .3s ease;
-    transition: background-color .3s ease;
-}
-.ImgBox{
-    position: relative;
-    -webkit-box-shadow: 0 -4px 12px rgb(0 0 0 / 50%);
-    box-shadow: 0 -4px 12px rgb(0 0 0 / 50%);
-}
-.ImgBox img{
-    height: 100%;
-    width: 100%;
-    border-radius: 2px;
-}
-.IconBox{
-    position: absolute;
-    bottom: 2px;
-    right: 8px;
-    opacity: 0;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
-    -webkit-box-shadow: 0 8px 8px rgb(0 0 0 / 30%);
-    box-shadow: 0 8px 8px rgb(0 0 0 / 30%);
-    z-index: 2;
-    border-radius: 500px;
-}
-.IconBox button{
-    background-color: #1db954;
-    border: 0;
-    border-radius: 500px;
-    -webkit-transition: -webkit-transform 33ms cubic-bezier(.3,0,0,1);
-    transition: -webkit-transform 33ms cubic-bezier(.3,0,0,1);
-    transition: transform 33ms cubic-bezier(.3,0,0,1);
-    transition: transform 33ms cubic-bezier(.3,0,0,1),-webkit-transform 33ms cubic-bezier(.3,0,0,1);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    height: 40px;
-    width: 40px;
-}
-.IconBox button svg{
-    font-size: 16px;
-    fill: #fff;
-}
-.Title{
-    margin-top: 16px;
-    min-height: 62px;
-}
-.Title p{
-    margin: 0px;
-    color: var(--text-white);
-}
-.Title p:last-child{
-    color: rgb(179, 179, 179);
-    margin-top: 4px;
-}
-.IconBox button:hover{
-    -webkit-transform: scale(1.06);
-    transform: scale(1.06);
-}
-.PlaylistCardS:hover .IconBox{
-    bottom: 12px;
-    opacity: 1;
 }
