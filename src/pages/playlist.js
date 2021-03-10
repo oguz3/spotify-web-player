@@ -11,7 +11,7 @@ import { PLAYLIST } from "../data/index";
 
 import styles from './playlist.module.css';
 
-function PlaylistPage({ isPlaying, setIsPlaying, setTrack, setTrackName }) {
+function PlaylistPage({ isPlaying, setIsPlaying, setTrack, setTrackName, setTrackImg, setTrackArtist, setTrackKey }) {
 	const { path } = useParams();
 
 	function changeBg(color){
@@ -57,14 +57,36 @@ function PlaylistPage({ isPlaying, setIsPlaying, setTrack, setTrackName }) {
 							<div className={styles.PlaylistSongs}>
 								{item.playlistData.map((song) => {
 									return (
-										<button key={song.index} onClick={() => {setTrack(song.link); setTrackName(song.songName)}} className={styles.SongBtn}>
-											<PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+										<button 
+											key={song.index} 
+											onClick={() => {
+												setTrack(song.link); 
+												setTrackName(song.songName);
+												setTrackImg(song.songimg);
+												setTrackArtist(song.songArtist);
+												setTrackKey(`${PLAYLIST.indexOf(item)}-${item.playlistData.indexOf(song)}`);
+											}} 
+											className={styles.SongBtn}
+											style={
+												item.type === "albüm" 
+													? {gridTemplateColumns: '16px 1fr 38px'} 
+													: {}
+											}
+										>
+											<PlayButton 
+												isPlaying={isPlaying} 
+												setIsPlaying={setIsPlaying}
+											/>
 											<p className={styles.SongIndex}>{song.index}</p>
+												{item.type === "albüm"
+													? ''
+													: <img src={song.songimg} />
+												}
 											<span>
 												<TextBoldL>{song.songName}</TextBoldL>
-												<TextRegularM>{item.artist}</TextRegularM>
+												<TextRegularM>{song.songArtist}</TextRegularM>
 											</span>
-											<p>3.14</p>
+											<p>{song.trackTime}</p>
 										</button>
 									);
 								})}

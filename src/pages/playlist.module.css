@@ -146,17 +146,20 @@
     color: white;
     position: relative;
     display: grid;
-    grid-template-columns: 16px 1fr 38px;
+    grid-template-columns: 16px 36px 1fr 38px;
     align-items: center;
     text-align: left;
     padding: 0px 16px;
     column-gap: 16px;
     height: 56px;
-
 }
 .SongBtn p{
     margin: 0;
     font-weight: 400;
+}
+.SongBtn img{
+    width: 36px;
+    height: 36px;
 }
 .SongBtn span p:last-child,
 .SongBtn p:last-child{

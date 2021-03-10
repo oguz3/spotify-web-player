@@ -12,13 +12,16 @@ import Search from './pages/search';
 import Library from './pages/library';
 import PlaylistPage from './pages/playlist';
 
-//import { MUSICLINKS } from './data/index';
+import { PLAYLIST } from './data/index';
 import styles from './style/App.module.css';
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [trackName, setTrackName] = useState('Yaşıyorum Sil Baştan');
-  const [track, setTrack] = useState('https://server1.indiryuklemp3.org/mp3_files/yasiyorum-sil-bastan-h8OmycopAr-0.mp3');
+  const [track, setTrack] = useState(PLAYLIST[0].playlistData[0].link);
+  const [trackKey, setTrackKey] = useState('0-0');
+  const [trackName, setTrackName] = useState(PLAYLIST[0].playlistData[0].songName);
+  const [trackImg, setTrackImg] = useState(PLAYLIST[0].playlistData[0].songimg);
+  const [trackArtist, setTrackArtist] = useState(PLAYLIST[0].playlistData[0].songArtist);
 
   return (
         <Router>
@@ -26,7 +29,10 @@ function App() {
           <Sidebar />
           <Switch>
             <Route exact path="/">
-                <Home isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+                <Home 
+                  isPlaying={isPlaying} 
+                  setIsPlaying={setIsPlaying}
+                />
             </Route>
             <Route path="/search">
                 <Search />
@@ -39,7 +45,10 @@ function App() {
                   isPlaying={isPlaying} 
                   setIsPlaying={setIsPlaying} 
                   setTrack={setTrack}
+                  setTrackKey={setTrackKey}
                   setTrackName={setTrackName}
+                  setTrackImg={setTrackImg}
+                  setTrackArtist={setTrackArtist}
                 />
             </Route>
           </Switch>
@@ -47,7 +56,16 @@ function App() {
             isPlaying={isPlaying} 
             setIsPlaying={setIsPlaying} 
             trackName={trackName}
-            track={track}/* totalMusic={MUSICLINKS.length}*//>
+            trackImg={trackImg}
+            trackArtist={trackArtist}
+            trackKey={trackKey}
+            track={track}
+            setTrack={setTrack}
+            setTrackKey={setTrackKey}
+            setTrackName={setTrackName}
+            setTrackImg={setTrackImg}
+            setTrackArtist={setTrackArtist}
+          />
         </div>
       </Router>
   );

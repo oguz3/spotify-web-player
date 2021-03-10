@@ -8,7 +8,7 @@ import Audio from './audio';
 
 import styles from "./footer.module.css";
 
-function Footer({isPlaying, setIsPlaying, track, trackName, totalMusic}){
+function Footer({isPlaying, setIsPlaying, track, trackName, trackImg, trackArtist, trackKey, setTrack, setTrackKey, setTrackName, setTrackImg, setTrackArtist }){
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(1);
@@ -34,18 +34,39 @@ function Footer({isPlaying, setIsPlaying, track, trackName, totalMusic}){
     return (
         <footer className={styles.footer}>
             <div className={styles.nowplayingbar}>
-                <FooterLeft trackName={trackName}/>
+                <FooterLeft 
+                    trackName={trackName} 
+                    trackImg={trackImg} 
+                    trackArtist={trackArtist}
+                />
                 <div className={styles.footerMid}>
-                    <MusicControlBox isPlaying={isPlaying} setIsPlaying={setIsPlaying} /*musicIndex={index} setIndex={setIndex} totalMusic={totalMusic}*//>
-                    <MusicProgressBar currentTime={currentTime} duration={duration} handleTrackClick={handleTrackClick}/>
+                    <MusicControlBox 
+                        isPlaying={isPlaying} 
+                        setIsPlaying={setIsPlaying} 
+                        trackKey={trackKey}
+                        setTrack={setTrack}
+                        setTrackKey={setTrackKey}
+                        setTrackName={setTrackName}
+                        setTrackImg={setTrackImg}
+                        setTrackArtist={setTrackArtist}
+                    />
+                    <MusicProgressBar 
+                        currentTime={currentTime} 
+                        duration={duration} 
+                        handleTrackClick={handleTrackClick}
+                    />
                     <Audio
                         track={track}
                         ref={audioRef}
                         handleDuration={setDuration}
                         handleCurrentTime={setCurrentTime}
+                        isPlaying={isPlaying} 
                     />
                 </div>
-                <FooterRight volume={volume} setVolume={setVolume}/>
+                <FooterRight 
+                    volume={volume} 
+                    setVolume={setVolume}
+                />
             </div>
         </footer>
     );

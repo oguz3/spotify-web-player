@@ -4,30 +4,35 @@ import IconButton from '../buttons/icon-button';
 
 import styles from "./footer-left.module.css";
 
-function FooterLeft({trackName}){
+function FooterLeft({trackName, trackImg, trackArtist}){
     return (
         <div className={styles.footerLeft}>
-            <ImgBox />
-            <SongDetails trackName={trackName}/>
+            <ImgBox 
+                trackImg={trackImg}
+            />
+            <SongDetails 
+                trackName={trackName}
+                trackArtist={trackArtist}
+            />
             <IconButton icon={<Icons.Like />} activeicon={<Icons.LikeActive />}/>
             <IconButton icon={<Icons.Corner />} activeicon={<Icons.Corner />}/>
         </div>
     );
 }
 
-function ImgBox(){
+function ImgBox({trackImg}){
     return (
         <div className={styles.imgBox}>
-            <img src={'https://i.scdn.co/image/ab67616d000048511d26b3e7ea803059a6e4ffea'} alt="Gavurlar"/>
+            <img src={trackImg} alt="Gavurlar"/>
         </div>
     );
 }
 
-function SongDetails({trackName}){
+function SongDetails({trackName, trackArtist}){
     return (
         <div className={styles.songDetails}>
             <TextRegularM>{trackName}</TextRegularM>
-            <TextRegularM><small>Ari Barakos</small></TextRegularM>
+            <TextRegularM><small>{trackArtist}</small></TextRegularM>
         </div>
     );
 }
