@@ -1,15 +1,16 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
+import { MUSICLINKS } from '../../data/index';
+
 const Audio = forwardRef(({ track, handleDuration, handleCurrentTime }, ref) => {
     return (
       <audio
         ref={ref}
         onLoadedMetadata={(e) => handleDuration(e.target.duration)}
         onTimeUpdate={(e) => handleCurrentTime(e.target.currentTime)}
-      >
-        <source src={track} type="audio/mpeg" />
-      </audio>
+        src={track}
+      />
     );
   },
 );
@@ -17,7 +18,6 @@ const Audio = forwardRef(({ track, handleDuration, handleCurrentTime }, ref) => 
 Audio.propTypes = {
     handleDuration: PropTypes.func.isRequired,
     handleCurrentTime: PropTypes.func.isRequired,
-    track: PropTypes.string.isRequired,
 };
 
 export default Audio;

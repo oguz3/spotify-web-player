@@ -1,0 +1,41 @@
+.PlaylistPage{
+    background: transparent;
+    position: relative;
+    margin-bottom: 95px;
+    padding-bottom: 16px;
+    color: var(--text-white);
+}
+.gradientBg{
+    height: 340px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: -webkit-gradient(linear,left top,left bottom,from(transparent),to(rgba(0,0,0,.5)));
+    background: linear-gradient(transparent,rgba(0,0,0,.5));
+    -webkit-transition: background 1s ease;
+    transition: background 1s ease;
+
+    background-color: var(--hover-home-bg);
+}
+.gradientBgSoft{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 340px;
+    height: 240px;
+    z-index: -2;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.6)),to(var(--main-background)));
+    background-image: linear-gradient(rgba(0,0,0,.6),var(--main-background));
+
+    background-color: var(--hover-home-bg);
+}
+.Bg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0px;
+    z-index: -3;
+    background-color: var(--main-background);
+}

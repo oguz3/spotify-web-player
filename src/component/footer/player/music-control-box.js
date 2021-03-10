@@ -4,13 +4,27 @@ import PlayButton from '../../buttons/play-button';
 
 import styles from "./music-control-box.module.css";
 
-function MusicControlBox({isPlaying, setIsPlaying }){
+function MusicControlBox({isPlaying, setIsPlaying, musicIndex, setIndex, totalMusic }){
+
+    function decreaseIndex(){
+        if(musicIndex == 0){ setIndex(totalMusic - 1) }
+        else{ setIndex(musicIndex - 1) }
+    }
+    function increaseIndex(){
+        if(musicIndex == (totalMusic - 1)){ setIndex(0) }
+        else{ setIndex(musicIndex + 1) }
+    }
+
     return (
         <div className={styles.musicControl}>
             <IconButton icon={<Icons.Mix />} activeicon={<Icons.Mix />}/>
-            <IconButton icon={<Icons.Prev />} activeicon={<Icons.Prev />}/>
+            <button className={styles.button} onClick={decreaseIndex}>
+                <Icons.Prev />
+            </button>
             <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
-            <IconButton icon={<Icons.Next />} activeicon={<Icons.Next />}/>
+            <button className={styles.button} onClick={increaseIndex}>
+                <Icons.Next />
+            </button>
             <IconButton icon={<Icons.Loop />} activeicon={<Icons.Loop />}/>
         </div>
     );

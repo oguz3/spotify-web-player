@@ -9,11 +9,12 @@ import Audio from './audio';
 
 import styles from "./footer.module.css";
 
-function Footer({isPlaying, setIsPlaying}){
+function Footer({isPlaying, setIsPlaying, track, totalMusic}){
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(1);
     const audioRef = useRef(null);
+    const [index, setIndex] = useState(0);
 
     const handleTrackClick = (position) => {
         audioRef.current.currentTime = position;
@@ -36,14 +37,15 @@ function Footer({isPlaying, setIsPlaying}){
             <div className={styles.nowplayingbar}>
                 <FooterLeft />
                 <div className={styles.footerMid}>
-                    <MusicControlBox isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+                    <MusicControlBox isPlaying={isPlaying} setIsPlaying={setIsPlaying} musicIndex={index} setIndex={setIndex} totalMusic={totalMusic}/>
                     <MusicProgressBar currentTime={currentTime} duration={duration} handleTrackClick={handleTrackClick}/>
                     <Audio
-                        track={track}
+                        track={track[index].link}
                         ref={audioRef}
                         handleDuration={setDuration}
                         handleCurrentTime={setCurrentTime}
                     />
+                    {index}
                 </div>
                 <FooterRight volume={volume} setVolume={setVolume}/>
             </div>
