@@ -6,6 +6,7 @@ import TextBoldM from '../component/text/text-bold-m';
 import TextRegularM from '../component/text/text-regular-m';
 import PlayButton from '../component/buttons/play-button';
 import IconButton from '../component/buttons/icon-button';
+import PlaylistTrack from '../component/playlist/playlist-track';
 import * as Icons from '../component/icons';
 import { PLAYLIST } from "../data/index";
 
@@ -69,26 +70,20 @@ function PlaylistPage({ isPlaying, setIsPlaying, setTrackData }) {
 												})
 											}} 
 											className={styles.SongBtn}
-											style={
-												item.type === "albüm" 
-													? {gridTemplateColumns: '16px 1fr 38px'} 
-													: {}
-											}
 										>
-											<PlayButton 
+											<PlaylistTrack 
 												isPlaying={isPlaying} 
 												setIsPlaying={setIsPlaying}
+												song={{
+													listType: item.type,
+													index: song.index, 
+													songimg: song.songimg,
+													songName: song.songName,
+													songArtist: song.songArtist,
+													songUrl: song.link,
+													trackTime: song.trackTime,
+												}}
 											/>
-											<p className={styles.SongIndex}>{song.index}</p>
-												{item.type === "albüm"
-													? ''
-													: <img src={song.songimg} />
-												}
-											<span>
-												<TextBoldL>{song.songName}</TextBoldL>
-												<TextRegularM>{song.songArtist}</TextRegularM>
-											</span>
-											<p>{song.trackTime}</p>
 										</button>
 									);
 								})}

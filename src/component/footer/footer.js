@@ -27,6 +27,14 @@ function Footer({isPlaying, setIsPlaying, trackData, setTrackData }){
     }, [audioRef, isPlaying]);
 
     useEffect(() => {
+        if (isPlaying) {
+          localStorage.setItem('playedSong', audioRef.current.currentSrc);
+        } else {
+          localStorage.setItem('playedSong', 'stop');
+        }
+    });
+
+    useEffect(() => {
         audioRef.current.volume = volume;
     }, [audioRef, volume]);
 

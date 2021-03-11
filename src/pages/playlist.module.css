@@ -143,15 +143,6 @@
     background: none;
     border: 1px solid transparent;
     border-radius: 4px;
-    color: white;
-    position: relative;
-    display: grid;
-    grid-template-columns: 16px 36px 1fr 38px;
-    align-items: center;
-    text-align: left;
-    padding: 0px 16px;
-    column-gap: 16px;
-    height: 56px;
 }
 .SongBtn p{
     margin: 0;
@@ -164,23 +155,4 @@
 .SongBtn span p:last-child,
 .SongBtn p:last-child{
     color: rgb(179, 179, 179);
-}
-.SongBtn div[role="button"]{
-    position: absolute;
-    opacity: 0;
-    background: none;
-    left: 5px;
-    z-index: 2;
-}
-.SongBtn div[role="button"] svg{
-    fill: #fff !important;
-}
-.SongBtn:hover{
-    background-color: hsla(0,0%,100%,.1);
-}
-.SongBtn:hover .SongIndex{
-    opacity: 0;
-}
-.SongBtn:hover div[role="button"]{
-    opacity: 1;
 }

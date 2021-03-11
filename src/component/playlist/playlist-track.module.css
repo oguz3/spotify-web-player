@@ -1,0 +1,44 @@
+.trackDiv{
+    display: block;
+    width: 100%;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: white;
+    position: relative;
+    display: grid;
+    grid-template-columns: 16px 36px 1fr 38px;
+    align-items: center;
+    text-align: left;
+    padding: 0px 16px;
+    column-gap: 16px;
+    height: 56px;
+}
+.playBtn{
+    position: absolute;
+    opacity: 0;
+    background: none;
+    left: 5px;
+    z-index: 2;
+    width: 32px;
+    height: 32px;
+    border: 0;
+}
+.playBtn svg{
+    font-size: 18px;
+    fill: #fff !important;
+}
+.gif{
+    width: 14px !important;
+    height: 14px !important;
+}
+.trackDiv:hover{
+    background-color: hsla(0,0%,100%,.1);
+}
+.trackDiv:hover .SongIndex,
+.trackDiv:hover .gif{
+    opacity: 0;
+}
+.trackDiv:hover .playBtn{
+    opacity: 1;
+}
