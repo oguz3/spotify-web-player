@@ -27,7 +27,7 @@ export const MENU = [
   }
 ]
 
-export const PLAYLIST = [
+export const PLAYLISTBTN = [
     {
       title: 'Çalma Listesi Oluştur',
       path: '/',
@@ -37,35 +37,5 @@ export const PLAYLIST = [
       title: 'Beğenilen Şarkılar',
       path: '/',
       ImgName: 'popularSong',
-    }
-]
-
-export const PLAYLISTLINKS = [
-    {
-        title: 'Heavy Queens',
-        path: '/'
-    },
-    {
-        title: 'Daily Mix 1',
-        path: '/'
-    },
-    {
-        title: 'Purple Turtle',
-        path: '/'
-    },    {
-        title: 'Volbeat Complate',
-        path: '/'
-    },
-    {
-        title: 'Vietnam War Era Music',
-        path: '/'
-    },
-    {
-        title: 'Türkçe Rock',
-        path: '/'
-    },
-    {
-        title: '5FDP',
-        path: '/'
     }
 ]

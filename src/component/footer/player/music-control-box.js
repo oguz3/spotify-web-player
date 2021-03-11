@@ -5,28 +5,22 @@ import PlayButton from '../../buttons/play-button';
 import { PLAYLIST } from "../../../data/index";
 import styles from "./music-control-box.module.css";
 
-function MusicControlBox({isPlaying, setIsPlaying, trackKey, setTrack, setTrackKey, setTrackName, setTrackImg, setTrackArtist }){
+function MusicControlBox({isPlaying, setIsPlaying, setTrackData, trackData }){
 
     function decreaseIndex(){
-        let keys = trackKey.split("-");
-        if(keys[1] == 0){ }else{
-            setTrack(PLAYLIST[keys[0]].playlistData[keys[1]-1].link)
-            setTrackName(PLAYLIST[keys[0]].playlistData[keys[1]-1].songName);
-            setTrackImg(PLAYLIST[keys[0]].playlistData[keys[1]-1].songimg);
-            setTrackArtist(PLAYLIST[keys[0]].playlistData[keys[1]-1].songArtist);
-    
-            setTrackKey(`${keys[0]}-${keys[1]-1}`);
+        if(trackData.trackKey[1] == 0){ }else{
+            setTrackData({
+                ...trackData,
+                trackKey: [trackData.trackKey[0], trackData.trackKey[1]-1],
+            });
         }
     }
     function increaseIndex(){
-        let keys = trackKey.split("-");
-        if(keys[1] == (PLAYLIST[keys[0]].playlistData.length)-1){ }else{
-            setTrack(PLAYLIST[keys[0]].playlistData[parseInt(keys[1])+1].link)
-            setTrackName(PLAYLIST[keys[0]].playlistData[parseInt(keys[1])+1].songName);
-            setTrackImg(PLAYLIST[keys[0]].playlistData[parseInt(keys[1])+1].songimg);
-            setTrackArtist(PLAYLIST[keys[0]].playlistData[parseInt(keys[1])+1].songArtist);
-    
-            setTrackKey(`${keys[0]}-${parseInt(keys[1])+1}`);
+        if(trackData.trackKey[1] == (PLAYLIST[trackData.trackKey[0]].playlistData.length)-1){ }else{
+            setTrackData({
+                ...trackData,
+                trackKey: [trackData.trackKey[0], parseInt(trackData.trackKey[1])+1],
+            });
         }
     }
 

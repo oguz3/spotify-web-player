@@ -1,11 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import styles from './playlist.module.css';
 
 import TitleS from '../text/title-s';
 import TextRegularM from '../text/text-regular-m';
 import PlaylistButton from './playlist-button';
-import { PLAYLIST, PLAYLISTLINKS } from '../../constants';
+import { PLAYLISTBTN } from '../../constants';
+import { PLAYLIST } from '../../data';
 
 function Playlist() {
     return (
@@ -13,7 +14,7 @@ function Playlist() {
         <TitleS>Çalma Listeleri</TitleS>
 
         <div>
-          {PLAYLIST.map((playlist) => {
+          {PLAYLISTBTN.map((playlist) => {
             return (
                 <PlaylistButton 
                   href={playlist.path} 
@@ -22,18 +23,18 @@ function Playlist() {
                 >
                   {playlist.title}
                 </PlaylistButton>
-                );
+            );
           })}
         </div>
 
         <hr className={styles.hr}/>
 
         <div>
-          {PLAYLISTLINKS.map((list) => {
+          {PLAYLIST.filter((item) => item.type === 'playlist').map((list) => {
             return (
-              <NavLink to={list.path} key={list.title} exact activeClassName="a">
+              <Link to={`/playlist/${list.link}`} key={list.title}>
                   <TextRegularM>{list.title}</TextRegularM>
-              </NavLink>
+              </Link>
             );
           })}
         </div>

@@ -4,15 +4,14 @@ import IconButton from '../buttons/icon-button';
 
 import styles from "./footer-left.module.css";
 
-function FooterLeft({trackName, trackImg, trackArtist}){
+function FooterLeft({ trackData }){
     return (
         <div className={styles.footerLeft}>
             <ImgBox 
-                trackImg={trackImg}
+                trackData={trackData}
             />
             <SongDetails 
-                trackName={trackName}
-                trackArtist={trackArtist}
+                trackData={trackData}
             />
             <IconButton icon={<Icons.Like />} activeicon={<Icons.LikeActive />}/>
             <IconButton icon={<Icons.Corner />} activeicon={<Icons.Corner />}/>
@@ -20,19 +19,19 @@ function FooterLeft({trackName, trackImg, trackArtist}){
     );
 }
 
-function ImgBox({trackImg}){
+function ImgBox({ trackData }){
     return (
         <div className={styles.imgBox}>
-            <img src={trackImg} alt="Gavurlar"/>
+            <img src={trackData.trackImg} alt="Gavurlar"/>
         </div>
     );
 }
 
-function SongDetails({trackName, trackArtist}){
+function SongDetails({ trackData }){
     return (
         <div className={styles.songDetails}>
-            <TextRegularM>{trackName}</TextRegularM>
-            <TextRegularM><small>{trackArtist}</small></TextRegularM>
+            <TextRegularM>{trackData.trackName}</TextRegularM>
+            <TextRegularM><small>{trackData.trackArtist}</small></TextRegularM>
         </div>
     );
 }

@@ -11,7 +11,7 @@ import { PLAYLIST } from "../data/index";
 
 import styles from './playlist.module.css';
 
-function PlaylistPage({ isPlaying, setIsPlaying, setTrack, setTrackName, setTrackImg, setTrackArtist, setTrackKey }) {
+function PlaylistPage({ isPlaying, setIsPlaying, setTrackData }) {
 	const { path } = useParams();
 
 	function changeBg(color){
@@ -60,11 +60,13 @@ function PlaylistPage({ isPlaying, setIsPlaying, setTrack, setTrackName, setTrac
 										<button 
 											key={song.index} 
 											onClick={() => {
-												setTrack(song.link); 
-												setTrackName(song.songName);
-												setTrackImg(song.songimg);
-												setTrackArtist(song.songArtist);
-												setTrackKey(`${PLAYLIST.indexOf(item)}-${item.playlistData.indexOf(song)}`);
+												setTrackData({
+													trackKey: [PLAYLIST.indexOf(item), item.playlistData.indexOf(song)],
+													track: song.link,
+													trackName: song.songName,
+													trackImg: song.songimg,
+													trackArtist: song.songArtist,
+												})
 											}} 
 											className={styles.SongBtn}
 											style={

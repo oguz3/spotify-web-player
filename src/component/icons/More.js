@@ -6,7 +6,6 @@ function SvgMix(props) {
       height="1em" 
       width="1em" 
       viewBox="0 0 32 32" 
-      class=""
       {...props}
     >
       <path 

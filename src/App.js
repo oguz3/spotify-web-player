@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,11 +17,23 @@ import styles from './style/App.module.css';
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [track, setTrack] = useState(PLAYLIST[0].playlistData[0].link);
-  const [trackKey, setTrackKey] = useState('0-0');
-  const [trackName, setTrackName] = useState(PLAYLIST[0].playlistData[0].songName);
-  const [trackImg, setTrackImg] = useState(PLAYLIST[0].playlistData[0].songimg);
-  const [trackArtist, setTrackArtist] = useState(PLAYLIST[0].playlistData[0].songArtist);
+  const [trackData, setTrackData] = useState({
+    trackKey: [0, 0],
+    track: `${PLAYLIST[0].playlistData[0].link}`,
+    trackName: `${PLAYLIST[0].playlistData[0].songName}`,
+    trackImg: `${PLAYLIST[0].playlistData[0].songimg}`,
+    trackArtist: `${PLAYLIST[0].playlistData[0].songArtist}`,
+  })
+
+  useEffect(() => {
+    setTrackData({
+      trackKey: trackData.trackKey,
+      track: `${PLAYLIST[trackData.trackKey[0]].playlistData[trackData.trackKey[1]].link}`,
+      trackName: `${PLAYLIST[trackData.trackKey[0]].playlistData[trackData.trackKey[1]].songName}`,
+      trackImg: `${PLAYLIST[trackData.trackKey[0]].playlistData[trackData.trackKey[1]].songimg}`,
+      trackArtist: `${PLAYLIST[trackData.trackKey[0]].playlistData[trackData.trackKey[1]].songArtist}`,
+    });
+  }, [trackData.trackKey]);
 
   return (
         <Router>
@@ -44,27 +56,15 @@ function App() {
                 <PlaylistPage 
                   isPlaying={isPlaying} 
                   setIsPlaying={setIsPlaying} 
-                  setTrack={setTrack}
-                  setTrackKey={setTrackKey}
-                  setTrackName={setTrackName}
-                  setTrackImg={setTrackImg}
-                  setTrackArtist={setTrackArtist}
+                  setTrackData={setTrackData}
                 />
             </Route>
           </Switch>
           <Footer 
             isPlaying={isPlaying} 
             setIsPlaying={setIsPlaying} 
-            trackName={trackName}
-            trackImg={trackImg}
-            trackArtist={trackArtist}
-            trackKey={trackKey}
-            track={track}
-            setTrack={setTrack}
-            setTrackKey={setTrackKey}
-            setTrackName={setTrackName}
-            setTrackImg={setTrackImg}
-            setTrackArtist={setTrackArtist}
+            trackData={trackData}
+            setTrackData={setTrackData}
           />
         </div>
       </Router>

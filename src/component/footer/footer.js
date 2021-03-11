@@ -8,12 +8,11 @@ import Audio from './audio';
 
 import styles from "./footer.module.css";
 
-function Footer({isPlaying, setIsPlaying, track, trackName, trackImg, trackArtist, trackKey, setTrack, setTrackKey, setTrackName, setTrackImg, setTrackArtist }){
+function Footer({isPlaying, setIsPlaying, trackData, setTrackData }){
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(1);
     const audioRef = useRef(null);
-    const [index, setIndex] = useState(0);
 
     const handleTrackClick = (position) => {
         audioRef.current.currentTime = position;
@@ -35,20 +34,14 @@ function Footer({isPlaying, setIsPlaying, track, trackName, trackImg, trackArtis
         <footer className={styles.footer}>
             <div className={styles.nowplayingbar}>
                 <FooterLeft 
-                    trackName={trackName} 
-                    trackImg={trackImg} 
-                    trackArtist={trackArtist}
+                    trackData={trackData}
                 />
                 <div className={styles.footerMid}>
                     <MusicControlBox 
                         isPlaying={isPlaying} 
                         setIsPlaying={setIsPlaying} 
-                        trackKey={trackKey}
-                        setTrack={setTrack}
-                        setTrackKey={setTrackKey}
-                        setTrackName={setTrackName}
-                        setTrackImg={setTrackImg}
-                        setTrackArtist={setTrackArtist}
+                        trackData={trackData}
+                        setTrackData={setTrackData}
                     />
                     <MusicProgressBar 
                         currentTime={currentTime} 
@@ -56,7 +49,7 @@ function Footer({isPlaying, setIsPlaying, track, trackName, trackImg, trackArtis
                         handleTrackClick={handleTrackClick}
                     />
                     <Audio
-                        track={track}
+                        trackData={trackData}
                         ref={audioRef}
                         handleDuration={setDuration}
                         handleCurrentTime={setCurrentTime}
