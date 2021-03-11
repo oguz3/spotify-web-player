@@ -30,6 +30,14 @@ function Footer({isPlaying, setIsPlaying, trackData, setTrackData }){
         audioRef.current.volume = volume;
     }, [audioRef, volume]);
 
+    useEffect(() => {
+        audioRef.current.addEventListener('ended', () => {
+            audioRef.current.currentTime = 0;
+            audioRef.current.pause();
+            setIsPlaying(false);
+        })
+    }, [audioRef]);
+
     return (
         <footer className={styles.footer}>
             <div className={styles.nowplayingbar}>
