@@ -1,5 +1,6 @@
 import Topnav from '../component/topnav/topnav';
 import TitleM from '../component/text/title-m'
+import SearchPageCard from '../component/cards/searchpage-card';
 import { SEARCHCARDS } from '../data/index';
 
 import styles from "./search.module.css";
@@ -14,12 +15,13 @@ function Search(){
                 <div className={styles.SearchCardGrid}>
                     {SEARCHCARDS.map((card) => {
                         return (
-                            <div key={card.title} className={styles.SearchCardBox} style={{backgroundColor: `${card.bgcolor}`}}>
-                                <div className={styles.SearchCard}>
-                                    <img src={card.imgurl} />
-                                    <TitleM>{card.title}</TitleM>
-                                </div>
-                            </div>
+                            <SearchPageCard 
+                                cardData={{
+                                    bgcolor: card.bgcolor,
+                                    title: card.title,
+                                    imgurl: card.imgurl,
+                                }}
+                            />
                         );
                     })}
                 </div>
