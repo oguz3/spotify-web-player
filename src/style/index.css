@@ -67,3 +67,6 @@ p{
 .activeTrack span p:first-child{
   color: #1db954 !important;
 }
+.activeTabBtn{
+    background-color: #333;
+}

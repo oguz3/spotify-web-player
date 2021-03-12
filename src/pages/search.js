@@ -16,6 +16,7 @@ function Search(){
                     {SEARCHCARDS.map((card) => {
                         return (
                             <SearchPageCard 
+                                key={card.title}
                                 cardData={{
                                     bgcolor: card.bgcolor,
                                     title: card.title,

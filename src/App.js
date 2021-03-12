@@ -50,7 +50,10 @@ function App() {
                 <Search />
             </Route>
             <Route path="/library">
-                <Library />
+                <Library 
+                  isPlaying={isPlaying} 
+                  setIsPlaying={setIsPlaying} 
+                />
             </Route>
             <Route exact path="/playlist/:path">
                 <PlaylistPage 

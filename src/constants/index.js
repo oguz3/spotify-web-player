@@ -39,3 +39,22 @@ export const PLAYLISTBTN = [
       ImgName: 'popularSong',
     }
 ]
+
+export const LIBRARYTABS = [
+  {
+    title: 'Çalma Listeleri',
+    path: '/library'
+  },
+  {
+    title: 'Podcast\'ler',
+    path: '/library/podcasts'
+  },
+  {
+    title: 'Sanatçılar',
+    path: '/library/artists'
+  },
+  {
+    title: 'Albümler',
+    path: '/library/albums'
+  }
+]

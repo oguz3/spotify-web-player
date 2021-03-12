@@ -1,6 +1,7 @@
 import PrevPageBtn from '../buttons/prev-page-button';
 import NextPageBtn from '../buttons/next-page-button';
 import SearchBox from './search-box';
+import LibraryTabBtn from './library-tab-btn';
 
 import styles from './topnav.module.css';
 
@@ -11,14 +12,8 @@ function Topnav({search = false, tabButtons = false}) {
                 <span>
                     <PrevPageBtn />
                     <NextPageBtn />
-                    {search
-                        ? <SearchBox />
-                        : ''
-                    }
-                    {tabButtons
-                        ? <div>a</div>
-                        : ''
-                    }
+                    { search ? <SearchBox /> : '' }
+                    { tabButtons ? <LibraryTabBtn /> : '' }
                 </span>
                 <span>
                     <button className={styles.ProfileBtn}>

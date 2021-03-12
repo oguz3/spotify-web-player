@@ -1,0 +1,15 @@
+.TabNav{
+    padding-left: 24px;
+}
+.tabBtn{
+    margin: 0 8px 0 0;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 4px;
+}
+.tabBtn p{
+    margin: 0;
+}
