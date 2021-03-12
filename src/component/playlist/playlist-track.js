@@ -8,6 +8,7 @@ import styles from "./playlist-track.module.css";
 
 function PlaylistTrack({isPlaying, setIsPlaying, song}) {
     const [thisSong, setthisSong] = useState(false);
+    
     setInterval(function(){
         setthisSong(song.songUrl == localStorage.getItem('playedSong'));
     }, 50);
