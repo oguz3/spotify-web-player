@@ -5,7 +5,7 @@ import styles from "./library.module.css";
 function Library(){
     return (
         <div className={styles.LibPage}>
-            <Topnav />
+            <Topnav tabButtons={true}/>
             Library Page
         </div>
     );

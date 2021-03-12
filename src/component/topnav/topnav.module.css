@@ -13,6 +13,17 @@
     align-items: center;
     justify-content: space-between;
 }
+.Topnav div div{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    height: auto;
+}
+.Topnav span {
+    display: flex;
+    align-items: center;
+}
 .ProfileBtn{
     border: none;
     height: 32px;
