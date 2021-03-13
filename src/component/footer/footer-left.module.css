@@ -22,3 +22,12 @@
     color: rgb(179, 179, 179);
     font-size: 11px;
 }
+@media screen and (max-width: 640px) {
+    .imgBox{
+        width: 42px;
+        height: 42px;
+    }
+    .footerLeft button:nth-child(3){
+        margin-left: auto;
+    }
+}

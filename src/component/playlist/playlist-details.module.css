@@ -59,3 +59,22 @@
     margin: 0;
     margin-left: 6px;
 }
+@media screen and (max-width: 640px) {
+    .playlistDetails{
+        grid-template-columns: 1fr;
+        row-gap: 8px;
+        place-items: center;
+        text-align: center;
+    }
+    .imgBox{
+        width: 125px;
+        height: 125px;
+    }
+    .textBox h1{
+        font-size: 32px;
+        line-height: 32px;
+    }
+    .Artist{
+        justify-content: center;
+    }
+}

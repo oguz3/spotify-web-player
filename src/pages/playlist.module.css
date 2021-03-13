@@ -1,4 +1,6 @@
 .PlaylistPage{
+    overflow-y: scroll;
+    overflow-x: hidden;
     background: transparent;
     position: relative;
     margin-bottom: 95px;
@@ -31,7 +33,7 @@
     background-color: var(--hover-home-bg);
 }
 .Bg{
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -116,4 +118,35 @@
 .SongBtn span p:last-child,
 .SongBtn p:last-child{
     color: rgb(179, 179, 179);
+}
+@media screen and (max-width: 640px) {
+    .PlaylistPage{
+        margin-bottom: 180px;
+    }
+    .PlaylistIcons{
+        padding: 20px 16px;
+    }
+    .PlaylistIcons div{
+        width: 38px;
+        height: 38px;
+        margin-right: 24px;
+    }
+    .PlaylistIcons div button{
+        width: 38px;
+        height: 38px;
+    }
+    .PlaylistIcons div button svg{
+        font-size: 21px;
+    }
+    .ListHead{
+        padding: 8px;
+        margin: 0 16px 8px 16px;
+        grid-template-columns: 16px 1fr 26px;
+    }
+    .PlaylistSongs{
+        padding: 0px 16px;
+    }
+    .SongBtn{
+        padding: 0;
+    }
 }

@@ -1,0 +1,9 @@
+.MobileNav{
+    position: fixed;
+    z-index: 99;
+    background: #181818;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid black;
+}

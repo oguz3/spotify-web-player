@@ -13,3 +13,8 @@
 .tabBtn p{
     margin: 0;
 }
+@media screen and (max-width: 640px) {
+    .tabBtn{
+        padding: 8px 12px;
+    }
+}

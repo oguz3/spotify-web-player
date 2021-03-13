@@ -1,6 +1,8 @@
 .LibPage{
     background-color: #121212;
     color: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .Library{
     padding: 32px;
@@ -14,4 +16,15 @@
     display: grid;
     gap: 24px;
     grid-template-columns: repeat(auto-fill,minmax(var(--cards-column-width),1fr));
+}
+@media screen and (max-width: 640px) {
+    .Library{
+        padding: 16px;
+        margin-bottom: 180px;
+        margin-top: 42px;
+    }
+    .Grid{
+        grid-gap: 16px;
+        grid-template-columns: 1fr 1fr;
+    }
 }

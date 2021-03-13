@@ -42,3 +42,10 @@
 .trackDiv:hover .playBtn{
     opacity: 1;
 }
+@media screen and (max-width: 640px) {
+    .trackDiv{
+        padding: 0;
+        padding-left: 6px;
+        width: calc(100% - 8px);
+    }
+}

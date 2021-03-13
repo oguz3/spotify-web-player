@@ -2,8 +2,7 @@ import * as Icon from '../component/icons'
 import React from 'react'
 
 export default {
-  TABLET_SIZE: 980,
-  DESKTOP_SIZE: 1270
+  MOBILE_SIZE: 640,
 }
 
 export const MENU = [

@@ -1,4 +1,5 @@
 .Home{
+    overflow-y: scroll;
     background: transparent;
     position: relative;
     margin-bottom: 95px;
@@ -57,4 +58,17 @@
     overflow-y: hidden;
     grid-auto-rows: 0;
     grid-template-rows: 1fr;
+}
+@media screen and (max-width: 640px) {
+    .SectionCardsMedium{
+        grid-gap: 16px;
+        overflow-y: auto;
+        grid-auto-rows: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    .Content{
+        padding: 16px;
+        padding-bottom: 100px;
+    }
 }

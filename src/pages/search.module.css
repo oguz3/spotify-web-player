@@ -1,6 +1,8 @@
 .SearchPage{
     background-color: #121212;
     color: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .Search{
     padding: 0px 32px;
@@ -12,4 +14,15 @@
     grid-gap: 24px;
     grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
     padding-top: 16px;
+}
+@media screen and (max-width: 640px) {
+    .Search{
+        padding: 16px;
+        margin-bottom: 180px;
+        margin-top: 24px;
+    }
+    .SearchCardGrid{
+        grid-gap: 16px;
+        grid-template-columns: 1fr 1fr;
+    }
 }

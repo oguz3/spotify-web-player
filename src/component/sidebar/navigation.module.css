@@ -23,3 +23,23 @@
 .button:hover p{
     color: var(--text-white);
 }
+@media screen and (max-width: 640px) {
+    .navBtns{
+        display: flex;
+        justify-content: space-around;
+        padding: 4px 8px;
+    }
+    .button{
+        background-color: #181818;
+        flex-direction: column;
+        height: auto;
+    }
+    .button svg{
+        font-size: 21px;
+    }
+    .button p{
+        font-weight: 400;
+        font-size: 11px;
+        margin-left: 0px;
+    }
+}

@@ -1,14 +1,18 @@
 import React, { useRef, useEffect, useState } from 'react';
 
+import useWindowSize from '../../hooks/useWindowSize';
 import FooterLeft from './footer-left';
 import MusicControlBox from './player/music-control-box';
 import MusicProgressBar from './player/music-progress-bar';
 import FooterRight from './footer-right';
 import Audio from './audio';
 
+import CONST from '../../constants/index';
 import styles from "./footer.module.css";
 
 function Footer({isPlaying, setIsPlaying, trackData, setTrackData }){
+    const size = useWindowSize();
+
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(1);
@@ -72,10 +76,12 @@ function Footer({isPlaying, setIsPlaying, trackData, setTrackData }){
                         isPlaying={isPlaying} 
                     />
                 </div>
-                <FooterRight 
-                    volume={volume} 
-                    setVolume={setVolume}
-                />
+                {size.width > CONST.MOBILE_SIZE && 
+                    <FooterRight 
+                        volume={volume} 
+                        setVolume={setVolume}
+                    />
+                }
             </div>
         </footer>
     );

@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #121212;
 }
 a{
   text-decoration: none;
@@ -20,6 +21,37 @@ button{
 }
 svg{
   font-size: 24px;
+}
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsla(0,0%,100%,.3);
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(0,0%,100%,.5);
+}
+::-webkit-scrollbar-thumb:active {
+  background: hsla(0,0%,100%,.5);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+::-webkit-scrollbar-track:active {
+  background: transparent;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 nav .activeLink button{
   background-color: var(--sidenav-active);
@@ -69,4 +101,12 @@ p{
 }
 .activeTabBtn{
     background-color: #333;
+}
+@media screen and (max-width: 640px) {
+  nav .activeLink button{
+    background-color: inherit;
+  }
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
 }
