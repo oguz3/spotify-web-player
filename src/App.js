@@ -17,6 +17,7 @@ import styles from './style/App.module.css';
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
+  
   const [trackData, setTrackData] = useState({
     trackKey: [0, 0],
     track: `${PLAYLIST[0].playlistData[0].link}`,
@@ -59,6 +60,7 @@ function App() {
                 <PlaylistPage 
                   isPlaying={isPlaying} 
                   setIsPlaying={setIsPlaying} 
+                  trackData={trackData}
                   setTrackData={setTrackData}
                 />
             </Route>

@@ -4,20 +4,20 @@ import * as Icons from '../icons';
 
 import styles from "./playlist-card-s.module.css";
 
-function PlaylistCardS({path, imgUrl, title, hoverColor, isPlaying, setIsPlaying}){
+function PlaylistCardS({data, isPlaying, setIsPlaying}){
 
     function changeTheme(){
-        document.documentElement.style.setProperty('--hover-home-bg', hoverColor);
+        document.documentElement.style.setProperty('--hover-home-bg', data.hoverColor);
     }
 
     return (
-        <Link to={`/playlist/${path}`} onMouseOver={changeTheme}>
+        <Link to={`/playlist/${data.link}`} onMouseOver={changeTheme}>
             <div className={styles.PlaylistCardS}>
                 <div className={styles.ImgBox}>
-                    <img src={imgUrl} alt={`${title}`} />
+                    <img src={data.imgUrl} alt={`${data.title}`} />
                 </div>
                 <div className={styles.Title}>
-                    <TextBoldL>{title}</TextBoldL>
+                    <TextBoldL>{data.title}</TextBoldL>
                     <div className={styles.IconBox}>
                         <button onClick={() => setIsPlaying(!isPlaying)}>
                             <Icons.Play />

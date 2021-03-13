@@ -47,6 +47,10 @@
     padding: 24px 32px;
     position: relative;
 }
+.PlaylistIcons button{
+    border: 0;
+    background-color: transparent;
+}
 .PlaylistIcons div{
     margin-right: 32px;
     width: 56px;

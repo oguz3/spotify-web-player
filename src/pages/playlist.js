@@ -10,7 +10,7 @@ import { PLAYLIST } from "../data/index";
 
 import styles from './playlist.module.css';
 
-function PlaylistPage({ isPlaying, setIsPlaying, setTrackData }) {
+function PlaylistPage({ isPlaying, setIsPlaying, trackData, setTrackData }) {
 	const { path } = useParams();
 
 	function changeBg(color){
@@ -31,16 +31,20 @@ function PlaylistPage({ isPlaying, setIsPlaying, setTrackData }) {
                         <div key={item.title} onLoad={changeBg(item.playlistBg)}>
 
 							<PlaylistDetails 
-								item={{
-									type: item.type,
-									title: item.title,
-									artist: item.artist,
-									imgUrl: item.imgUrl,
-								}}
+								data={item}
 							/>
 
 							<div className={styles.PlaylistIcons}>
-								<PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+								<button
+									onClick={() => {
+										setTrackData({
+											...trackData,
+											trackKey: [PLAYLIST.indexOf(item), 0]
+										});
+									}} 
+								>
+									<PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+								</button>
 								<IconButton icon={<Icons.Like />} activeicon={<Icons.LikeActive />}/>
 								<Icons.More className={styles.moreIcon}/>
 							</div>
@@ -58,11 +62,8 @@ function PlaylistPage({ isPlaying, setIsPlaying, setTrackData }) {
 											key={song.index} 
 											onClick={() => {
 												setTrackData({
+													...trackData,
 													trackKey: [PLAYLIST.indexOf(item), item.playlistData.indexOf(song)],
-													track: song.link,
-													trackName: song.songName,
-													trackImg: song.songimg,
-													trackArtist: song.songArtist,
 												})
 											}} 
 											className={styles.SongBtn}
@@ -70,14 +71,9 @@ function PlaylistPage({ isPlaying, setIsPlaying, setTrackData }) {
 											<PlaylistTrack 
 												isPlaying={isPlaying} 
 												setIsPlaying={setIsPlaying}
-												song={{
+												data={{
 													listType: item.type,
-													index: song.index, 
-													songimg: song.songimg,
-													songName: song.songName,
-													songArtist: song.songArtist,
-													songUrl: song.link,
-													trackTime: song.trackTime,
+													song: song
 												}}
 											/>
 										</button>

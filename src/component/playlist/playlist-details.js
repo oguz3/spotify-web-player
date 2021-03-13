@@ -3,20 +3,20 @@ import TextBoldM from '../text/text-bold-m';
 
 import styles from "./playlist-details.module.css";
 
-function PlaylistDetails({item}) {
+function PlaylistDetails({data}) {
 	return (
         <div className={styles.playlistDetails}>
             <div className={styles.imgBox}>
-                <img src={item.imgUrl} />
+                <img src={data.imgUrl} />
             </div>
             <div className={styles.textBox}>
-                <TitleS>{item.type}</TitleS>
-                <h1>{item.title}</h1>
+                <TitleS>{data.type}</TitleS>
+                <h1>{data.title}</h1>
                 <div className={styles.Artist}>
                     <figure>
-                        <img src={item.imgUrl} />
+                        <img src={data.imgUrl} />
                     </figure>
-                    <TextBoldM>{item.artist}</TextBoldM>
+                    <TextBoldM>{data.artist}</TextBoldM>
                 </div>
             </div>
         </div>

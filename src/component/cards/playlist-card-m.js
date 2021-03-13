@@ -5,12 +5,12 @@ import * as Icons from "../icons";
 
 import styles from "./playlist-card-m.module.css";
 
-function PlaylistCardM({ path, imgUrl, title, artist, isPlaying, setIsPlaying}) {
+function PlaylistCardM({ data, isPlaying, setIsPlaying}) {
 	return (
-		<Link to={`/playlist/${path}`}>
+		<Link to={`/playlist/${data.link}`}>
 			<div className={styles.PlaylistCardS}>
 				<div className={styles.ImgBox}>
-					<img src={imgUrl} alt={title} />
+					<img src={data.imgUrl} alt={data.title} />
 					<div className={styles.IconBox}>
                         <button onClick={() => setIsPlaying(!isPlaying)}>
                             <Icons.Play />
@@ -18,8 +18,8 @@ function PlaylistCardM({ path, imgUrl, title, artist, isPlaying, setIsPlaying}) 
 					</div>
 				</div>
 				<div className={styles.Title}>
-					<TextBoldL>{title}</TextBoldL>
-					<TextRegularM>{artist}</TextRegularM>
+					<TextBoldL>{data.title}</TextBoldL>
+					<TextRegularM>{data.artist}</TextRegularM>
 				</div>
 			</div>
 		</Link>

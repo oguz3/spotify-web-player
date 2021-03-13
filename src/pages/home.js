@@ -25,11 +25,8 @@ function Home({isPlaying, setIsPlaying}){
                         {PLAYLIST.map((item) => {
                             return (
                                 <PlaylistCardS 
-                                    path={item.link}
-                                    imgUrl={item.imgUrl} 
-                                    title={item.title} 
-                                    hoverColor={item.hoverColor} 
                                     key={item.title}
+                                    data={item}
                                     isPlaying={isPlaying} 
                                     setIsPlaying={setIsPlaying}
                                 />
@@ -46,11 +43,8 @@ function Home({isPlaying, setIsPlaying}){
                         {PLAYLIST.slice(0, 6).map((item) => {
                             return (
                                 <PlaylistCardM 
-                                    path={item.link}
-                                    imgUrl={item.imgUrl} 
-                                    title={item.title} 
-                                    artist={item.artist} 
                                     key={item.title}
+                                    data={item}
                                     isPlaying={isPlaying} 
                                     setIsPlaying={setIsPlaying}
                                 />

@@ -28,11 +28,8 @@ function PlaylistTab({isPlaying, setIsPlaying}){
                 {PLAYLIST.filter(item => item.type == 'playlist').map((item) => {
                     return (
                         <PlaylistCardM 
-                            path={item.link}
-                            imgUrl={item.imgUrl} 
-                            title={item.title} 
-                            artist={item.artist} 
                             key={item.title}
+                            data={item}
                             isPlaying={isPlaying} 
                             setIsPlaying={setIsPlaying}
                         />
@@ -51,11 +48,8 @@ function PodcastTab({isPlaying, setIsPlaying}){
                 {PLAYLIST.filter(item => item.type == 'podcast').map((item) => {
                     return (
                         <PlaylistCardM 
-                            path={item.link}
-                            imgUrl={item.imgUrl} 
-                            title={item.title} 
-                            artist={item.artist} 
                             key={item.title}
+                            data={item}
                             isPlaying={isPlaying} 
                             setIsPlaying={setIsPlaying}
                         />
@@ -82,11 +76,8 @@ function AlbumTab({isPlaying, setIsPlaying}){
                 {PLAYLIST.filter(item => item.type == 'albüm').map((item) => {
                     return (
                         <PlaylistCardM 
-                            path={item.link}
-                            imgUrl={item.imgUrl} 
-                            title={item.title} 
-                            artist={item.artist} 
                             key={item.title}
+                            data={item}
                             isPlaying={isPlaying} 
                             setIsPlaying={setIsPlaying}
                         />

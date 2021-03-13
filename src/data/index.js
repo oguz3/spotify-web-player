@@ -230,7 +230,7 @@ export const PLAYLIST = [
 				songName: "Yukarıya Bak",
 				songimg:
 					"https://i.scdn.co/image/ab67616d00004851e0cfce61b45ba6064a07fb0e",
-				songArtist: "Ogün Şanlısoy",
+				songArtist: "Ogün Sanlısoy",
 				link:
 					"https://p.scdn.co/mp3-preview/182320dad925b62fe2dc6332213efd886de06389?cid=6d083ea30aaa46428fbf1590d31f6750",
 				trackTime: "0:30",
@@ -286,7 +286,7 @@ export const PLAYLIST = [
 		imgUrl:
 			"https://i.scdn.co/image/ab67616d0000b273e0cfce61b45ba6064a07fb0e",
 		hoverColor: "rgb(160, 24, 32)",
-		artist: "Ogün Şanlısoy",
+		artist: "Ogün Sanlısoy",
 		playlistBg: "rgb(160, 24, 32)",
 		playlistData: [
 			{
@@ -294,7 +294,7 @@ export const PLAYLIST = [
 				songName: "Ben",
 				songimg:
 					"https://i.scdn.co/image/ab67616d00004851e0cfce61b45ba6064a07fb0e",
-				songArtist: "Ogün Şanlısoy",
+				songArtist: "Ogün Sanlısoy",
 				link:
 					"https://p.scdn.co/mp3-preview/dc04a8a751d3934138d8d59ca9fc4d38293a7a7a?cid=6d083ea30aaa46428fbf1590d31f6750",
 				trackTime: "0:30",
@@ -304,7 +304,7 @@ export const PLAYLIST = [
 				songName: "Hadi Ben Güldür",
 				songimg:
 					"https://i.scdn.co/image/ab67616d00004851e0cfce61b45ba6064a07fb0e",
-				songArtist: "Ogün Şanlısoy",
+				songArtist: "Ogün Sanlısoy",
 				link:
 					"https://p.scdn.co/mp3-preview/5ee65e0b973ae11afff9dcc2ab3866006ffa6ea1?cid=6d083ea30aaa46428fbf1590d31f6750",
 				trackTime: "0:30",
@@ -314,7 +314,7 @@ export const PLAYLIST = [
 				songName: "Anma Arkadaş",
 				songimg:
 					"https://i.scdn.co/image/ab67616d00004851e0cfce61b45ba6064a07fb0e",
-				songArtist: "Ogün Şanlısoy",
+				songArtist: "Ogün Sanlısoy",
 				link:
 					"https://p.scdn.co/mp3-preview/808b9af30bb51f0aebff43b21e7b7d7cc885b37c?cid=6d083ea30aaa46428fbf1590d31f6750",
 				trackTime: "0:30",
