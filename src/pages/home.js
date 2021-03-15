@@ -8,7 +8,7 @@ import styles from "./home.module.css";
 
 import { PLAYLIST } from '../data/index'
 
-function Home({isPlaying, setIsPlaying}){
+function Home({isPlaying, setIsPlaying, trackData}){
     return (
         <div className={styles.Home}>
             <div className={styles.HoverBg}></div>
@@ -28,6 +28,7 @@ function Home({isPlaying, setIsPlaying}){
                                     data={item}
                                     isPlaying={isPlaying} 
                                     setIsPlaying={setIsPlaying}
+                                    trackData={trackData}
                                 />
                             );
                         })}
@@ -46,6 +47,7 @@ function Home({isPlaying, setIsPlaying}){
                                     data={item}
                                     isPlaying={isPlaying} 
                                     setIsPlaying={setIsPlaying}
+                                    trackData={trackData}
                                 />
                             );
                         })}

@@ -6,21 +6,21 @@ import { PLAYLIST } from "../data/index";
 
 import styles from "./library.module.css";
 
-function Library({isPlaying, setIsPlaying}){
+function Library({isPlaying, setIsPlaying, trackData}){
     return (
         <div className={styles.LibPage}>
                 <Topnav tabButtons={true}/>
                 <div className={styles.Library}>
-                        <Route exact path="/library"><PlaylistTab isPlaying={isPlaying} setIsPlaying={setIsPlaying}/></Route>
-                        <Route path="/library/podcasts"><PodcastTab isPlaying={isPlaying} setIsPlaying={setIsPlaying}/></Route>
+                        <Route exact path="/library"><PlaylistTab isPlaying={isPlaying} setIsPlaying={setIsPlaying} trackData={trackData}/></Route>
+                        <Route path="/library/podcasts"><PodcastTab isPlaying={isPlaying} setIsPlaying={setIsPlaying} trackData={trackData}/></Route>
                         <Route path="/library/artists"><ArtistTab/></Route>
-                        <Route path="/library/albums"><AlbumTab isPlaying={isPlaying} setIsPlaying={setIsPlaying}/></Route>
+                        <Route path="/library/albums"><AlbumTab isPlaying={isPlaying} setIsPlaying={setIsPlaying} trackData={trackData}/></Route>
                 </div>
         </div>
     );
 }
 
-function PlaylistTab({isPlaying, setIsPlaying}){
+function PlaylistTab({isPlaying, setIsPlaying, trackData}){
     return (
         <div>
             <TitleM>Çalma Listeleri</TitleM>
@@ -32,6 +32,7 @@ function PlaylistTab({isPlaying, setIsPlaying}){
                             data={item}
                             isPlaying={isPlaying} 
                             setIsPlaying={setIsPlaying}
+                            trackData={trackData}
                         />
                     );
                 })}
@@ -40,7 +41,7 @@ function PlaylistTab({isPlaying, setIsPlaying}){
     );
 }
 
-function PodcastTab({isPlaying, setIsPlaying}){
+function PodcastTab({isPlaying, setIsPlaying, trackData}){
     return (
         <div>
             <TitleM>Podcast'ler</TitleM>
@@ -52,6 +53,7 @@ function PodcastTab({isPlaying, setIsPlaying}){
                             data={item}
                             isPlaying={isPlaying} 
                             setIsPlaying={setIsPlaying}
+                            trackData={trackData}
                         />
                     );
                 })}
@@ -68,7 +70,7 @@ function ArtistTab(){
     );
 }
 
-function AlbumTab({isPlaying, setIsPlaying}){
+function AlbumTab({isPlaying, setIsPlaying, trackData}){
     return (
         <div>
             <TitleM>Albümler</TitleM>
@@ -80,6 +82,7 @@ function AlbumTab({isPlaying, setIsPlaying}){
                             data={item}
                             isPlaying={isPlaying} 
                             setIsPlaying={setIsPlaying}
+                            trackData={trackData}
                         />
                     );
                 })}

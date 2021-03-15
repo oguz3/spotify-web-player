@@ -33,29 +33,21 @@
     z-index: 2;
     border-radius: 500px;
 }
-.IconBox button{
+.IconBox div{
     background-color: #1db954;
-    border: 0;
-    border-radius: 500px;
+    height: 40px;
+    width: 40px;
+}
+.IconBox button{
+    height: 40px;
+    width: 40px;
     -webkit-transition: -webkit-transform 33ms cubic-bezier(.3,0,0,1);
     transition: -webkit-transform 33ms cubic-bezier(.3,0,0,1);
     transition: transform 33ms cubic-bezier(.3,0,0,1);
     transition: transform 33ms cubic-bezier(.3,0,0,1),-webkit-transform 33ms cubic-bezier(.3,0,0,1);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    height: 40px;
-    width: 40px;
 }
 .IconBox button svg{
-    font-size: 16px;
-    fill: #fff;
+    fill: #fff !important;
 }
 .IconBox button:hover{
     -webkit-transform: scale(1.06);

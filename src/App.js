@@ -52,6 +52,7 @@ function App() {
                 <Home 
                   isPlaying={isPlaying} 
                   setIsPlaying={setIsPlaying}
+                  trackData={trackData}
                 />
             </Route>
             <Route path="/search">
@@ -61,6 +62,7 @@ function App() {
                 <Library 
                   isPlaying={isPlaying} 
                   setIsPlaying={setIsPlaying} 
+                  trackData={trackData}
                 />
             </Route>
             <Route exact path="/playlist/:path">

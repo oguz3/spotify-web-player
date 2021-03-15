@@ -30,7 +30,7 @@ function MusicControlBox({isPlaying, setIsPlaying, setTrackData, trackData }){
             <button className={styles.button} onClick={decreaseIndex}>
                 <Icons.Prev />
             </button>
-            <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+            <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} isthisplay={true}/>
             <button className={styles.button} onClick={increaseIndex}>
                 <Icons.Next />
             </button>

@@ -1,14 +1,20 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TextBoldL from '../text/text-bold-l';
-import * as Icons from '../icons';
+import PlayButton from '../buttons/play-button';
 
 import styles from "./playlist-card-s.module.css";
 
-function PlaylistCardS({data, isPlaying, setIsPlaying}){
+function PlaylistCardS({ data, trackData, isPlaying, setIsPlaying }){
+    const[isthisplay, setIsthisPlay] = useState(false)
 
     function changeTheme(){
         document.documentElement.style.setProperty('--hover-home-bg', data.hoverColor);
     }
+
+    useEffect(() => {
+		setIsthisPlay(parseInt(data.index) === trackData.trackKey[0])
+	})
 
     return (
         <Link to={`/playlist/${data.link}`} onMouseOver={changeTheme}>
@@ -19,9 +25,7 @@ function PlaylistCardS({data, isPlaying, setIsPlaying}){
                 <div className={styles.Title}>
                     <TextBoldL>{data.title}</TextBoldL>
                     <div className={styles.IconBox}>
-                        <button onClick={() => setIsPlaying(!isPlaying)}>
-                            <Icons.Play />
-                        </button>
+                        <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} isthisplay={isthisplay}/>
                     </div>
                 </div>
             </div>

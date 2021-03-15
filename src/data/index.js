@@ -1,5 +1,6 @@
 export const PLAYLIST = [
 	{
+		index: "0",
 		type: "albüm",
 		title: "Lafıma Gücenme",
 		link: "lafimagucenme",
@@ -112,6 +113,7 @@ export const PLAYLIST = [
 		],
 	},
 	{
+		index: "1",
 		type: "playlist",
 		title: "Heavy Queens",
 		link: "heavyqueens",
@@ -154,6 +156,7 @@ export const PLAYLIST = [
 		],
 	},
 	{
+		index: "2",
 		type: "playlist",
 		title: "Türkçe Rock",
 		link: "turkcerock",
@@ -196,6 +199,7 @@ export const PLAYLIST = [
 		],
 	},
 	{
+		index: "3",
 		type: "playlist",
 		title: "Daily Mix 1",
 		link: "dailymix1",
@@ -238,6 +242,7 @@ export const PLAYLIST = [
 		],
 	},
 	{
+		index: "4",
 		type: "playlist",
 		title: "Çalmaya Doyamadıkların",
 		link: "calmayadoyamadiklarin",
@@ -280,6 +285,7 @@ export const PLAYLIST = [
 		],
 	},
 	{
+		index: "5",
 		type: "albüm",
 		title: "Ben",
 		link: "ben",
@@ -322,6 +328,7 @@ export const PLAYLIST = [
 		],
 	},
 	{
+		index: "6",
 		type: "playlist",
 		title: "Daily Mix 2",
 		link: "dailymix2",
@@ -365,6 +372,7 @@ export const PLAYLIST = [
 		],
 	},
 	{
+		index: "7",
 		type: "playlist",
 		title: "Daily Mix 3",
 		link: "dailymix3",
@@ -407,6 +415,7 @@ export const PLAYLIST = [
 		],
 	},
 	{
+		index: "8",
 		type: "podcast",
 		title: "O Tarz Mi?",
 		link: "otarzmi",
@@ -422,12 +431,13 @@ export const PLAYLIST = [
 				songimg:
 					"https://i.scdn.co/image/dacd32a7203aeb7b7910d8880943a939c8006b0a",
 				songArtist: "otarzmi",
-				link: "",
-				trackTime: "-:--",
+				link: "https://episodes.buzzsprout.com/gozvh84ncp95hmvgapex1dk5pjwx?",
+				trackTime: "41:25",
 			},
 		],
 	},
 	{
+		index: "9",
 		type: "playlist",
 		title: "Haftalık Keşif",
 		link: "haftalikkesif",

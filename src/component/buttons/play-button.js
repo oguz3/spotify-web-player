@@ -5,10 +5,10 @@ import IconButton from '../buttons/icon-button';
 
 import styles from './play-button.module.css'
 
-function PlayButton({ isPlaying, setIsPlaying }) {
+function PlayButton({ isPlaying, setIsPlaying, isthisplay }) {
         return (
             <div className={styles.playBtn} tabIndex="0" role="button" onClick={() => setIsPlaying(!isPlaying)}>
-                {isPlaying
+                {isPlaying && isthisplay
                         ? <IconButton icon={<Icons.Pause />} activeicon={<Icons.Pause />}/>
                         : <IconButton icon={<Icons.Play />} activeicon={<Icons.Play />}/>
                 }

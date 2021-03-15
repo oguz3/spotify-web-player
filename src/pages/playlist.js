@@ -9,13 +9,20 @@ import * as Icons from '../component/icons';
 import { PLAYLIST } from "../data/index";
 
 import styles from './playlist.module.css';
+import { useEffect, useState } from 'react';
 
 function PlaylistPage({ isPlaying, setIsPlaying, trackData, setTrackData }) {
+	const[playlistIndex, setPlaylistIndex] = useState(undefined);
+	const[isthisplay, setIsthisPlay] = useState(false);
 	const { path } = useParams();
 
 	function changeBg(color){
 		document.documentElement.style.setProperty('--hover-home-bg', color);
 	}
+
+	useEffect(() => {
+		setIsthisPlay(playlistIndex === trackData.trackKey[0])
+	})
 
 	return (
 		<div className={styles.PlaylistPage}>
@@ -28,7 +35,10 @@ function PlaylistPage({ isPlaying, setIsPlaying, trackData, setTrackData }) {
 			{PLAYLIST.map((item) => {
                 if(item.link == path){
                     return (
-                        <div key={item.title} onLoad={changeBg(item.playlistBg)}>
+                        <div key={item.title} onLoad={() => {
+							changeBg(item.playlistBg);
+							setPlaylistIndex(PLAYLIST.indexOf(item))
+						}}>
 
 							<PlaylistDetails 
 								data={item}
@@ -43,7 +53,7 @@ function PlaylistPage({ isPlaying, setIsPlaying, trackData, setTrackData }) {
 										});
 									}} 
 								>
-									<PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+									<PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} isthisplay={isthisplay}/>
 								</button>
 								<IconButton icon={<Icons.Like />} activeicon={<Icons.LikeActive />}/>
 								<Icons.More className={styles.moreIcon}/>
