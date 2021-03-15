@@ -17,5 +17,17 @@
     top: 0;
     bottom: 95px;
     cursor: col-resize;
+    z-index: 9999;
+}
+.ActiveChange{
+    border-right: 1px solid gray;
+}
+.ActiveChange::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     z-index: 999;
 }

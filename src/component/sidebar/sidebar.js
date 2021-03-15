@@ -46,7 +46,7 @@ function Sidebar() {
           </div>
         </div>
         <div 
-            className={styles.changeWidth}
+            className={`${styles.changeWidth} ${isMouseDown ? styles.ActiveChange : ''}`}
             onMouseDown={() => {
               setisMouseDown(true);
             }}

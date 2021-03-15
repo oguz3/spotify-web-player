@@ -24,7 +24,7 @@ function PlaylistCardS({ data, trackData, isPlaying, setIsPlaying }){
                 </div>
                 <div className={styles.Title}>
                     <TextBoldL>{data.title}</TextBoldL>
-                    <div className={styles.IconBox}>
+                    <div className={`${styles.IconBox} ${isthisplay&&isPlaying ? styles.ActiveIconBox : ''}`}>
                         <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} isthisplay={isthisplay}/>
                     </div>
                 </div>

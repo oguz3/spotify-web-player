@@ -18,7 +18,7 @@ function PlaylistCardM({ data, trackData, isPlaying, setIsPlaying}) {
 			<div className={styles.PlaylistCardS}>
 				<div className={styles.ImgBox}>
 					<img src={data.imgUrl} alt={data.title} />
-					<div className={styles.IconBox}>
+					<div className={`${styles.IconBox} ${isthisplay&&isPlaying ? styles.ActiveIconBox : ''}`}>
 						<PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} isthisplay={isthisplay}/>
 					</div>
 				</div>

@@ -41,6 +41,10 @@
     transition: transform 33ms cubic-bezier(.3,0,0,1);
     transition: transform 33ms cubic-bezier(.3,0,0,1),-webkit-transform 33ms cubic-bezier(.3,0,0,1);
 }
+.ActiveIconBox{
+    bottom: 12px;
+    opacity: 1;
+}
 .IconBox button svg{
     fill: #fff !important;
 }
