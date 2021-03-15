@@ -1,7 +1,6 @@
 .SideNavbar{
     /*width: var(--sidenav-width);*/
     background-color: var(--sidenav-black);
-    padding-top: 24px;
     position: relative;
 }
 .Fixed{
