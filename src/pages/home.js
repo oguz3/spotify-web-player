@@ -15,7 +15,6 @@ function Home({isPlaying, setIsPlaying}){
             <div className={styles.Bg}></div>
 
             <Topnav />
-
             <div className={styles.Content}>
                 <section>
                     <div className={styles.SectionTitle}>

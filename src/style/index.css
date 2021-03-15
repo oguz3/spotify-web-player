@@ -53,6 +53,8 @@ svg{
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+::-moz-selection { color: inherit;  background: transparent; }
+::selection      { color: inherit;  background: transparent; } 
 nav .activeLink button{
   background-color: var(--sidenav-active);
 }

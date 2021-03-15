@@ -1,11 +1,21 @@
 .SideNavbar{
-    width: var(--sidenav-width);
+    /*width: var(--sidenav-width);*/
     background-color: var(--sidenav-black);
     padding-top: 24px;
+    position: relative;
 }
 .Fixed{
-    position: fixed;
+    position: sticky;
     top: 0;
     bottom: 0;
     padding-top: 24px;
+}
+.changeWidth{
+    width: 8px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 95px;
+    cursor: col-resize;
+    z-index: 999;
 }

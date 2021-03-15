@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function useWindowSize() {
   const isClient = typeof window === 'object'
