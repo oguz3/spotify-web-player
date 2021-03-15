@@ -14,20 +14,22 @@ function PlaylistCardM({ data, trackData, isPlaying, setIsPlaying}) {
 	})
 
 	return (
-		<Link to={`/playlist/${data.link}`}>
-			<div className={styles.PlaylistCardS}>
-				<div className={styles.ImgBox}>
-					<img src={data.imgUrl} alt={data.title} />
-					<div className={`${styles.IconBox} ${isthisplay&&isPlaying ? styles.ActiveIconBox : ''}`}>
-						<PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} isthisplay={isthisplay}/>
+		<div className={styles.PlaylistCardSBox}>
+			<Link to={`/playlist/${data.link}`}>
+				<div className={styles.PlaylistCardS}>
+					<div className={styles.ImgBox}>
+						<img src={data.imgUrl} alt={data.title} />
+					</div>
+					<div className={styles.Title}>
+						<TextBoldL>{data.title}</TextBoldL>
+						<TextRegularM>{data.artist}</TextRegularM>
 					</div>
 				</div>
-				<div className={styles.Title}>
-					<TextBoldL>{data.title}</TextBoldL>
-					<TextRegularM>{data.artist}</TextRegularM>
-				</div>
+			</Link>
+			<div className={`${styles.IconBox} ${isthisplay&&isPlaying ? styles.ActiveIconBox : ''}`}>
+				<PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} isthisplay={isthisplay}/>
 			</div>
-		</Link>
+		</div>
 	);
 }
 

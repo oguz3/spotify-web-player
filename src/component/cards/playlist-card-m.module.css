@@ -1,3 +1,7 @@
+.PlaylistCardSBox{
+    position: relative;
+    overflow: hidden;
+}
 .PlaylistCardS{
     position: relative;
     padding: 16px;
@@ -18,8 +22,8 @@
 }
 .IconBox{
     position: absolute;
-    bottom: 2px;
-    right: 8px;
+    bottom: 94px;
+    right: 24px;
     opacity: 0;
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
@@ -42,7 +46,7 @@
     transition: transform 33ms cubic-bezier(.3,0,0,1),-webkit-transform 33ms cubic-bezier(.3,0,0,1);
 }
 .ActiveIconBox{
-    bottom: 12px;
+    bottom: 106px;
     opacity: 1;
 }
 .IconBox button svg{
@@ -65,7 +69,7 @@
     -webkit-transform: scale(1.06);
     transform: scale(1.06);
 }
-.PlaylistCardS:hover .IconBox{
-    bottom: 12px;
+.PlaylistCardSBox:hover .IconBox{
+    bottom: 106px;
     opacity: 1;
 }
