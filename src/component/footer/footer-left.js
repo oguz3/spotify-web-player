@@ -1,17 +1,18 @@
+import { connect } from "react-redux";
 import * as Icons from '../icons';
 import TextRegularM from '../text/text-regular-m';
 import IconButton from '../buttons/icon-button';
 
 import styles from "./footer-left.module.css";
 
-function FooterLeft({ trackData }){
+function FooterLeft(props){
     return (
         <div className={styles.footerLeft}>
             <ImgBox 
-                trackData={trackData}
+                trackData={props.trackData}
             />
             <SongDetails 
-                trackData={trackData}
+                trackData={props.trackData}
             />
             <IconButton icon={<Icons.Like />} activeicon={<Icons.LikeActive />}/>
             <IconButton icon={<Icons.Corner />} activeicon={<Icons.Corner />}/>
@@ -36,4 +37,11 @@ function SongDetails({ trackData }){
     );
 }
 
-export default FooterLeft;
+
+const mapStateToProps = (state) => {
+    return {
+      trackData: state.trackData
+    };
+};
+  
+export default connect(mapStateToProps)(FooterLeft);
