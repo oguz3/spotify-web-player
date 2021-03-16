@@ -1,14 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { changePlay } from '../../actions';
 import * as Icons from '../icons';
 import IconButton from '../buttons/icon-button';
 
 import styles from './play-button.module.css'
 
-function PlayButton({ isPlaying, setIsPlaying, isthisplay }) {
+function PlayButton(props) {
+  console.log(props)
         return (
-            <div className={styles.playBtn} tabIndex="0" role="button" onClick={() => setIsPlaying(!isPlaying)}>
-                {isPlaying && isthisplay
+            <div className={styles.playBtn} tabIndex="0" role="button" onClick={() => props.changePlay(!props.isPlaying)}>
+                {props.isPlaying && props.isthisplay
                         ? <IconButton icon={<Icons.Pause />} activeicon={<Icons.Pause />}/>
                         : <IconButton icon={<Icons.Play />} activeicon={<Icons.Play />}/>
                 }
@@ -16,9 +18,10 @@ function PlayButton({ isPlaying, setIsPlaying, isthisplay }) {
         );
 }
 
-PlayButton.propTypes = {
-  isPlaying: PropTypes.bool.isRequired,
-  setIsPlaying: PropTypes.func.isRequired,
+const mapStateToProps = (state) => {
+  return {
+    isPlaying: state.isPlaying
+  };
 };
 
-export default PlayButton;
+export default connect(mapStateToProps, { changePlay })(PlayButton);
