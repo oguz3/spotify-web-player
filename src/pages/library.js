@@ -6,21 +6,21 @@ import { PLAYLIST } from "../data/index";
 
 import styles from "./library.module.css";
 
-function Library({isPlaying, setIsPlaying, trackData}){
+function Library(){
     return (
         <div className={styles.LibPage}>
                 <Topnav tabButtons={true}/>
                 <div className={styles.Library}>
-                        <Route exact path="/library"><PlaylistTab isPlaying={isPlaying} setIsPlaying={setIsPlaying} trackData={trackData}/></Route>
-                        <Route path="/library/podcasts"><PodcastTab isPlaying={isPlaying} setIsPlaying={setIsPlaying} trackData={trackData}/></Route>
-                        <Route path="/library/artists"><ArtistTab/></Route>
-                        <Route path="/library/albums"><AlbumTab isPlaying={isPlaying} setIsPlaying={setIsPlaying} trackData={trackData}/></Route>
+                        <Route exact path="/library"><PlaylistTab /></Route>
+                        <Route path="/library/podcasts"><PodcastTab /></Route>
+                        <Route path="/library/artists"><ArtistTab /></Route>
+                        <Route path="/library/albums"><AlbumTab /></Route>
                 </div>
         </div>
     );
 }
 
-function PlaylistTab({isPlaying, setIsPlaying, trackData}){
+function PlaylistTab(){
     return (
         <div>
             <TitleM>Çalma Listeleri</TitleM>
@@ -30,9 +30,6 @@ function PlaylistTab({isPlaying, setIsPlaying, trackData}){
                         <PlaylistCardM 
                             key={item.title}
                             data={item}
-                            isPlaying={isPlaying} 
-                            setIsPlaying={setIsPlaying}
-                            trackData={trackData}
                         />
                     );
                 })}
@@ -41,7 +38,7 @@ function PlaylistTab({isPlaying, setIsPlaying, trackData}){
     );
 }
 
-function PodcastTab({isPlaying, setIsPlaying, trackData}){
+function PodcastTab(){
     return (
         <div>
             <TitleM>Podcast'ler</TitleM>
@@ -51,9 +48,6 @@ function PodcastTab({isPlaying, setIsPlaying, trackData}){
                         <PlaylistCardM 
                             key={item.title}
                             data={item}
-                            isPlaying={isPlaying} 
-                            setIsPlaying={setIsPlaying}
-                            trackData={trackData}
                         />
                     );
                 })}
@@ -70,7 +64,7 @@ function ArtistTab(){
     );
 }
 
-function AlbumTab({isPlaying, setIsPlaying, trackData}){
+function AlbumTab(){
     return (
         <div>
             <TitleM>Albümler</TitleM>
@@ -80,9 +74,6 @@ function AlbumTab({isPlaying, setIsPlaying, trackData}){
                         <PlaylistCardM 
                             key={item.title}
                             data={item}
-                            isPlaying={isPlaying} 
-                            setIsPlaying={setIsPlaying}
-                            trackData={trackData}
                         />
                     );
                 })}

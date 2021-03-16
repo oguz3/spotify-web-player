@@ -54,11 +54,7 @@ function App() {
                 <Search />
             </Route>
             <Route path="/library">
-                <Library 
-                  isPlaying={isPlaying} 
-                  setIsPlaying={setIsPlaying} 
-                  trackData={trackData}
-                />
+                <Library />
             </Route>
             <Route exact path="/playlist/:path">
                 <PlaylistPage 
