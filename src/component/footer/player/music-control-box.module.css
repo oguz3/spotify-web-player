@@ -5,6 +5,9 @@
     justify-content: space-between;
     margin-bottom: 12px;
 }
+.musicControl div button svg{
+    fill: black !important;
+}
 .button{
     border: 0;
     background: transparent;
