@@ -3,6 +3,7 @@ import RangeSlider from './range-slider';
 import IconButton from '../buttons/icon-button';
 
 import styles from "./footer-right.module.css";
+import { useState } from 'react';
 
 function FooterRight({ volume, setVolume }){
     return (
@@ -15,19 +16,20 @@ function FooterRight({ volume, setVolume }){
 }
 
 function SoundLevel({ volume, setVolume }){
+    const[lastVolume, setLastVolume] = useState(1);
 
-
-    const handleInputChange = () => {
+    const soundBtn = () => {
         if(volume == 0){
-            setVolume(parseFloat(1));
+            setVolume(lastVolume);
         }else{
-            setVolume(parseFloat(0));
+            setLastVolume(volume);
+            setVolume(0);
         }
     };
 
     return (
         <div className={styles.soundBar}>
-            <div tabIndex="0" role="button" onClick={handleInputChange}>
+            <div tabIndex="0" role="button" onClick={soundBtn}>
                 <IconButton icon={<Icons.Sound />} activeicon={<Icons.SoundClose />}/>
             </div>
             <RangeSlider minvalue={0} maxvalue={1} value={volume} handleChange={setVolume}/>
