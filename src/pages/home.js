@@ -8,7 +8,7 @@ import styles from "./home.module.css";
 
 import { PLAYLIST } from '../data/index'
 
-function Home({isPlaying, setIsPlaying, trackData}){
+function Home(){
     return (
         <div className={styles.Home}>
             <div className={styles.HoverBg}></div>
@@ -20,15 +20,13 @@ function Home({isPlaying, setIsPlaying, trackData}){
                     <div className={styles.SectionTitle}>
                         <TitleL>İyi günler</TitleL>
                     </div>
+
                     <div className={styles.SectionCards}>
                         {PLAYLIST.map((item) => {
                             return (
                                 <PlaylistCardS 
                                     key={item.title}
                                     data={item}
-                                    isPlaying={isPlaying} 
-                                    setIsPlaying={setIsPlaying}
-                                    trackData={trackData}
                                 />
                             );
                         })}
@@ -39,15 +37,13 @@ function Home({isPlaying, setIsPlaying, trackData}){
                     <div className={styles.SectionTitle}>
                         <TitleM>Yakında çalınanlar</TitleM>
                     </div>
+                    
                     <div className={styles.SectionCardsMedium}>
                         {PLAYLIST.slice(0, 6).map((item) => {
                             return (
                                 <PlaylistCardM 
                                     key={item.title}
                                     data={item}
-                                    isPlaying={isPlaying} 
-                                    setIsPlaying={setIsPlaying}
-                                    trackData={trackData}
                                 />
                             );
                         })}

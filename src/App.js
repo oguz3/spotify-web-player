@@ -48,11 +48,7 @@ function App() {
           }
           <Switch>
             <Route exact path="/">
-                <Home 
-                  isPlaying={isPlaying} 
-                  setIsPlaying={setIsPlaying}
-                  trackData={trackData}
-                />
+                <Home />
             </Route>
             <Route path="/search">
                 <Search />
@@ -73,12 +69,7 @@ function App() {
                 />
             </Route>
           </Switch>
-          <Footer 
-            isPlaying={isPlaying} 
-            setIsPlaying={setIsPlaying} 
-            trackData={trackData}
-            setTrackData={setTrackData}
-          />
+          <Footer />
         </div>
       </Router>
   );
