@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { connect } from 'react-redux';
+import { changeTrack } from '../../actions';
 import { Link } from "react-router-dom";
 import TextBoldL from "../text/text-bold-l";
 import TextRegularM from '../text/text-regular-m';
@@ -27,8 +28,11 @@ function PlaylistCardM(props) {
 					</div>
 				</div>
 			</Link>
-			<div className={`${styles.IconBox} ${isthisplay&&props.isPlaying ? styles.ActiveIconBox : ''}`}>
-				<PlayButton isthisplay={isthisplay}/>
+			<div 
+				onClick={() => props.changeTrack([parseInt(props.data.index), 0])} 
+				className={`${styles.IconBox} ${isthisplay&&props.isPlaying ? styles.ActiveIconBox : ''}`}
+			>
+				<PlayButton isthisplay={isthisplay} />
 			</div>
 		</div>
 	);
@@ -41,4 +45,4 @@ const mapStateToProps = (state) => {
 	};
 };
   
-export default connect(mapStateToProps)(PlaylistCardM);
+export default connect(mapStateToProps, { changeTrack })(PlaylistCardM);
