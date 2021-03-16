@@ -1,4 +1,6 @@
 import { useParams } from 'react-router';
+import { connect } from 'react-redux';
+import { changeTrack } from '../actions';
 import Topnav from '../component/topnav/topnav';
 import TextRegularM from "../component/text/text-regular-m";
 import PlayButton from '../component/buttons/play-button';
@@ -11,7 +13,7 @@ import { PLAYLIST } from "../data/index";
 import styles from './playlist.module.css';
 import { useEffect, useState } from 'react';
 
-function PlaylistPage({ isPlaying, setIsPlaying, trackData, setTrackData }) {
+function PlaylistPage(props) {
 	const[playlistIndex, setPlaylistIndex] = useState(undefined);
 	const[isthisplay, setIsthisPlay] = useState(false);
 	const { path } = useParams();
@@ -21,7 +23,7 @@ function PlaylistPage({ isPlaying, setIsPlaying, trackData, setTrackData }) {
 	}
 
 	useEffect(() => {
-		setIsthisPlay(playlistIndex === trackData.trackKey[0])
+		setIsthisPlay(playlistIndex === props.trackData.trackKey[0])
 	})
 
 	return (
@@ -40,20 +42,13 @@ function PlaylistPage({ isPlaying, setIsPlaying, trackData, setTrackData }) {
 							setPlaylistIndex(PLAYLIST.indexOf(item))
 						}}>
 
-							<PlaylistDetails 
-								data={item}
-							/>
+							<PlaylistDetails data={item} />
 
 							<div className={styles.PlaylistIcons}>
 								<button
-									onClick={() => {
-										setTrackData({
-											...trackData,
-											trackKey: [PLAYLIST.indexOf(item), 0]
-										});
-									}} 
+									onClick={() => props.changeTrack([PLAYLIST.indexOf(item), 0])} 
 								>
-									<PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} isthisplay={isthisplay}/>
+									<PlayButton isthisplay={isthisplay}/>
 								</button>
 								<IconButton icon={<Icons.Like />} activeicon={<Icons.LikeActive />}/>
 								<Icons.More className={styles.moreIcon}/>
@@ -70,17 +65,10 @@ function PlaylistPage({ isPlaying, setIsPlaying, trackData, setTrackData }) {
 									return (
 										<button 
 											key={song.index} 
-											onClick={() => {
-												setTrackData({
-													...trackData,
-													trackKey: [PLAYLIST.indexOf(item), item.playlistData.indexOf(song)],
-												})
-											}} 
+											onClick={() => props.changeTrack([PLAYLIST.indexOf(item), item.playlistData.indexOf(song)])} 
 											className={styles.SongBtn}
 										>
 											<PlaylistTrack 
-												isPlaying={isPlaying} 
-												setIsPlaying={setIsPlaying}
 												data={{
 													listType: item.type,
 													song: song
@@ -98,4 +86,12 @@ function PlaylistPage({ isPlaying, setIsPlaying, trackData, setTrackData }) {
 	);
 }
 
-export default PlaylistPage;
+
+
+const mapStateToProps = (state) => {
+	return {
+		trackData: state.trackData,
+	};
+};
+  
+export default connect(mapStateToProps, { changeTrack })(PlaylistPage);

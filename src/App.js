@@ -19,26 +19,6 @@ import styles from './style/App.module.css';
 function App() {
   const size = useWindowSize();
 
-  const [isPlaying, setIsPlaying] = useState(false);
-  
-  const [trackData, setTrackData] = useState({
-    trackKey: [0, 0],
-    track: `${PLAYLIST[0].playlistData[0].link}`,
-    trackName: `${PLAYLIST[0].playlistData[0].songName}`,
-    trackImg: `${PLAYLIST[0].playlistData[0].songimg}`,
-    trackArtist: `${PLAYLIST[0].playlistData[0].songArtist}`,
-  })
-
-  useEffect(() => {
-    setTrackData({
-      trackKey: trackData.trackKey,
-      track: `${PLAYLIST[trackData.trackKey[0]].playlistData[trackData.trackKey[1]].link}`,
-      trackName: `${PLAYLIST[trackData.trackKey[0]].playlistData[trackData.trackKey[1]].songName}`,
-      trackImg: `${PLAYLIST[trackData.trackKey[0]].playlistData[trackData.trackKey[1]].songimg}`,
-      trackArtist: `${PLAYLIST[trackData.trackKey[0]].playlistData[trackData.trackKey[1]].songArtist}`,
-    });
-  }, [trackData.trackKey]);
-
   return (
         <Router>
         <div className={styles.layout}>
@@ -57,12 +37,7 @@ function App() {
                 <Library />
             </Route>
             <Route exact path="/playlist/:path">
-                <PlaylistPage 
-                  isPlaying={isPlaying} 
-                  setIsPlaying={setIsPlaying} 
-                  trackData={trackData}
-                  setTrackData={setTrackData}
-                />
+                <PlaylistPage />
             </Route>
           </Switch>
           <Footer />

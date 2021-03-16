@@ -32,18 +32,19 @@ function Footer(props){
         }
     }, [audioRef, props.isPlaying]);
 
-    useEffect(() => {
+    /*useEffect(() => {
         if (props.isPlaying) {
           localStorage.setItem('playedSong', audioRef.current.currentSrc);
         } else {
           localStorage.setItem('playedSong', 'stop');
         }
-    });
+    });*/
 
     useEffect(() => {
         audioRef.current.volume = volume;
     }, [audioRef, volume]);
 
+    
     useEffect(() => {
         audioRef.current.addEventListener('ended', () => {
             if(props.trackData.trackKey[1] === (PLAYLIST[props.trackData.trackKey[0]].playlistData.length)-1){
