@@ -7,7 +7,6 @@ import IconButton from '../buttons/icon-button';
 import styles from './play-button.module.css'
 
 function PlayButton(props) {
-  console.log(props)
         return (
             <div className={styles.playBtn} tabIndex="0" role="button" onClick={() => props.changePlay(!props.isPlaying)}>
                 {props.isPlaying && props.isthisplay
