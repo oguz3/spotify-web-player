@@ -1,4 +1,4 @@
-import styles from './text-bold-l.module.css'
+import styles from './text-bold-l.module.css';
 
 function TextBoldL({children}){
     return (
