@@ -1,13 +1,19 @@
-/**
+/**optimized by k-gun (Kerem Güneş)
+ * 
  * @param {number} time
  */
 export default function convertTime(time) {
-  let minutes = Math.floor(~~((time % 3600) / 60));
-  let seconds = Math.floor(time % 60);
 
-  if (seconds < 10) {
-    seconds = `0${seconds}`;
+  let ret = [0, 0];
+  // Do calculations if have time (also !NaN = true).
+  if (time) {
+    ret = [
+      ~~(time % 3600 / 60), // Minutes.
+      ~~(time % 60)         // Seconds.
+    ];
   }
+  // Add item's paddings converting to string.
+  ret = ret.map(re => `${re}`.padStart(2, '0'));
 
-  return isNaN(time) ? '0:00' : `${minutes}:${seconds}`;
+  return ret.join(':');
 }
