@@ -1,6 +1,7 @@
 .progressBar{
 	display: flex;
     align-items: center;
+	position: relative;
 }
 .range__slider {
 	-webkit-appearance: none;
@@ -9,6 +10,15 @@
 	overflow: hidden;
 	width: auto;
 	border-radius: 2px;
+}
+.spanThumb{
+	width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 50px;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
 }
 .range__slider::-webkit-slider-runnable-track {
 	-webkit-appearance: none;
@@ -55,4 +65,8 @@
 .progressBar:hover .range__slider::-moz-range-thumb {
 	background: #1db954;
 	box-shadow: -410px 0 0 408px #1db954;
+}
+.progressBar:hover span {
+    background: #1db954 !important;
+    opacity: 1 !important;
 }
