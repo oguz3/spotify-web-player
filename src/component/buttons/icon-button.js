@@ -1,26 +1,18 @@
-import React from 'react';
-import * as Icons from '../icons';
+import cn from 'classnames'
+import React, { useState } from 'react'
+import styles from './icon-button.module.css'
 
-import styles from './icon-button.module.css';
-
-class IconButton extends React.Component { 
-    constructor(props) {
-      super(props);
-      this.state = {
-        isActive: false,
-      }
-    } 
-
-    render() {
-      return (
-        <button 
-            className={`${styles.iconButton} ${this.state.isActive ? "activeIcon" : ""}`} 
-            onClick={()=>this.setState({ isActive: !this.state.isActive })}
-        >
-            {this.state.isActive ?  this.props.activeicon :  this.props.icon }
-        </button>
-      );
-    }
-  
+const IconButton = (props) => {
+  const { activeicon, icon } = props
+  const [isActive, setIsActive] = useState(false)
+  return (
+    <button
+      className={cn(styles.iconButton, isActive ? 'activeIcon' : '')}
+      onClick={() => setIsActive(!isActive)}
+    >
+      {isActive ? activeicon : icon}
+    </button>
+  )
 }
+
 export default IconButton
