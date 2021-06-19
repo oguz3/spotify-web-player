@@ -1,5 +1,5 @@
-import { PLAYLIST } from "../data/index";
-import { PLAYPAUSE, CHANGETRACK } from "../actions/index";
+import { PLAYLIST } from '../data/index'
+import { PLAYPAUSE, CHANGETRACK } from '../actions/index'
 
 const INITIAL_STATE = {
   trackData: {
@@ -10,7 +10,7 @@ const INITIAL_STATE = {
     trackArtist: `${PLAYLIST[0].playlistData[0].songArtist}`
   },
   isPlaying: false
-};
+}
 
 export const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -18,7 +18,7 @@ export const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isPlaying: action.payload
-      };
+      }
     case CHANGETRACK:
       return {
         ...state,
@@ -35,11 +35,12 @@ export const reducer = (state = INITIAL_STATE, action) => {
             PLAYLIST[action.payload[0]].playlistData[action.payload[1]].songimg
           }`,
           trackArtist: `${
-            PLAYLIST[action.payload[0]].playlistData[action.payload[1]].songArtist
+            PLAYLIST[action.payload[0]].playlistData[action.payload[1]]
+              .songArtist
           }`
         }
-      };
+      }
     default:
-      return state;
+      return state
   }
-};
+}
