@@ -247,7 +247,7 @@ export const PLAYLIST = [
 		title: "Çalmaya Doyamadıkların",
 		link: "calmayadoyamadiklarin",
 		imgUrl:
-			"https://daily-mix.scdn.co/covers/backtracks/PZN_Repeat_Rewind_DEFAULT-tr.jpg",
+			"https://daily-mix.scdn.co/covers/backtracks/PZN_Repeat_Rewind2_LARGE-tr.jpg",
 		hoverColor: "rgb(240, 56, 168)",
 		artist: "Çalmaya doyamadığın parçalar",
 		playlistBg: "rgb(240, 56, 168)",
